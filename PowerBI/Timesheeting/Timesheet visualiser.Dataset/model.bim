@@ -4,7 +4,7 @@
     "annotations": [
       {
         "name": "PBI_QueryOrder",
-        "value": "[\"Parameter1\",\"Transform Sample File\",\"Sample File\",\"Transform File\",\"Weekday sort\",\"Pivotted\",\"Raw data\"]"
+        "value": "[\"Parameter1\",\"Transform Sample File\",\"Sample File\",\"Transform File\",\"Weekday sort\",\"Raw data\",\"Pivotted\",\"SourceDir\"]"
       },
       {
         "name": "__PBI_TimeIntelligenceEnabled",
@@ -12,7 +12,7 @@
       },
       {
         "name": "PBIDesktopVersion",
-        "value": "2.122.746.0 (23.10)"
+        "value": "2.124.1805.0 (23.12)"
       },
       {
         "name": "PBI_ProTooling",
@@ -34,6 +34,7 @@
       }
     ],
     "dataAccessOptions": {
+      "fastCombine": true,
       "legacyRedirects": true,
       "returnErrorValuesAsNull": true
     },
@@ -45,6 +46,10 @@
           {
             "name": "PBI_ResultType",
             "value": "Binary"
+          },
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
           }
         ],
         "expression": "#\"Sample File\" meta [IsParameterQuery=true, BinaryIdentifier=#\"Sample File\", Type=\"Binary\", IsParameterQueryRequired=true]",
@@ -78,11 +83,15 @@
           {
             "name": "PBI_ResultType",
             "value": "Binary"
+          },
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
           }
         ],
         "expression": [
           "let",
-          "    Source = Folder.Files(\"C:\\Users\\JackMacCormick\\OneDrive - Diabetes Australia\\Documents\\_Times\\Records\"),",
+          "    Source = Folder.Files(SourceDir),",
           "    Navigation1 = Source{0}[Content]",
           "in",
           "    Navigation1"
@@ -114,6 +123,24 @@
         "lineageTag": "bda78f9e-0c9a-456c-81c3-11ba94f0f766",
         "mAttributes": "[ FunctionQueryBinding = \"{\"\"exemplarFormulaName\"\":\"\"Transform Sample File\"\"}\" ]",
         "queryGroup": "Transform File from Records\\Helper Queries"
+      },
+      {
+        "name": "SourceDir",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Text"
+          }
+        ],
+        "description": "Where are ya files",
+        "expression": "\"C:\\Users\\JackMacCormick\\Documents\\_Times\\Records\" meta [IsParameterQuery=true, List={\"C:\\Users\\JackMacCormick\\Documents\\_Times\\Records\"}, DefaultValue=\"C:\\Users\\JackMacCormick\\Documents\\_Times\\Records\", Type=\"Text\", IsParameterQueryRequired=true]",
+        "kind": "m",
+        "lineageTag": "8da9a7cf-cc9e-4199-9a54-2ee01ca0c87c",
+        "queryGroup": "00 Params"
       }
     ],
     "queryGroups": [
@@ -121,7 +148,7 @@
         "annotations": [
           {
             "name": "PBI_QueryGroupOrder",
-            "value": "0"
+            "value": "1"
           }
         ],
         "folder": "Transform File from Records"
@@ -134,6 +161,15 @@
           }
         ],
         "folder": "Transform File from Records\\Helper Queries"
+      },
+      {
+        "annotations": [
+          {
+            "name": "PBI_QueryGroupOrder",
+            "value": "0"
+          }
+        ],
+        "folder": "00 Params"
       }
     ],
     "relationships": [
@@ -161,6 +197,10 @@
           {
             "name": "PBI_ResultType",
             "value": "Table"
+          },
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
           }
         ],
         "columns": [
@@ -303,7 +343,7 @@
             "source": {
               "expression": [
                 "let",
-                "    Source = Folder.Files(\"C:\\Users\\JackMacCormick\\OneDrive - Diabetes Australia\\Documents\\_Times\\Records\"),",
+                "    Source = Folder.Files(SourceDir),",
                 "    #\"Filtered Hidden Files1\" = Table.SelectRows(Source, each [Attributes]?[Hidden]? <> true),",
                 "    #\"Invoke Custom Function1\" = Table.AddColumn(#\"Filtered Hidden Files1\", \"Transform File\", each #\"Transform File\"([Content])),",
                 "    #\"Renamed Columns1\" = Table.RenameColumns(#\"Invoke Custom Function1\", {\"Name\", \"Source.Name\"}),",
@@ -814,13 +854,8 @@
             "source": {
               "expression": [
                 "let",
-                "    Source = Folder.Files(\"C:\\Users\\JackMacCormick\\OneDrive - Diabetes Australia\\Documents\\_Times\\Records\"),",
-                "    #\"Filtered Hidden Files1\" = Table.SelectRows(Source, each [Attributes]?[Hidden]? <> true),",
-                "    #\"Invoke Custom Function1\" = Table.AddColumn(#\"Filtered Hidden Files1\", \"Transform File\", each #\"Transform File\"([Content])),",
-                "    #\"Renamed Columns1\" = Table.RenameColumns(#\"Invoke Custom Function1\", {\"Name\", \"Source.Name\"}),",
-                "    #\"Removed Other Columns1\" = Table.SelectColumns(#\"Renamed Columns1\", {\"Source.Name\", \"Transform File\"}),",
-                "    #\"Expanded Table Column1\" = Table.ExpandTableColumn(#\"Removed Other Columns1\", \"Transform File\", Table.ColumnNames(#\"Transform File\"(#\"Sample File\"))),",
-                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Expanded Table Column1\",{{\"Source.Name\", type text}, {\"Time\", type time}, {\"Monday\", type text}, {\"Tuesday\", type text}, {\"Wednesday\", type text}, {\"Thursday\", type any}, {\"Friday\", type any}, {\"Saturday\", type any}, {\"Sunday\", type any}, {\"Notes\", type any}}),",
+                "    Source = #\"Raw data\",",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(Source,{{\"Source.Name\", type text}, {\"Time\", type time}, {\"Monday\", type text}, {\"Tuesday\", type text}, {\"Wednesday\", type text}, {\"Thursday\", type any}, {\"Friday\", type any}, {\"Saturday\", type any}, {\"Sunday\", type any}, {\"Notes\", type any}}),",
                 "    #\"Rename - weekday start\" = Table.RenameColumns(#\"Changed Type\",{{\"Source.Name\", \"Week Start\"}}),",
                 "    #\"reduce filename to wk start\" = Table.TransformColumns(#\"Rename - weekday start\", {{\"Week Start\", each Text.BetweenDelimiters(_, \" \", \".\"), type text}}),",
                 "    #\"Duplicated - weekday start\" = Table.DuplicateColumn(#\"reduce filename to wk start\", \"Week Start\", \"Week Start - Copy\"),",

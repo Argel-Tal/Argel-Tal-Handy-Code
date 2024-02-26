@@ -1,0 +1,7 @@
+## links
+
+See html files for metadata
+
+https://www.data.qld.gov.au/dataset/?q=&groups=maps-and-geospatial&sort=metadata_modified+desc
+https://www.data.qld.gov.au/dataset/locality-boundaries-queensland
+https://qldspatial.information.qld.gov.au/catalogue/custom/search.page?q=%22Locality%20boundaries%20-%20Queensland%22

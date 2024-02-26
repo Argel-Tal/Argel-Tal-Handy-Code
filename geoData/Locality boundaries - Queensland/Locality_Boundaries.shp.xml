@@ -1,0 +1,692 @@
+<metadata xml:lang="en">
+	<Esri>
+		<CreaDate>20140312</CreaDate>
+		<CreaTime>13531300</CreaTime>
+		<ArcGISFormat>1.0</ArcGISFormat>
+		<ArcGISstyle>ISO 19139 Metadata Implementation Specification</ArcGISstyle>
+		<SyncOnce>FALSE</SyncOnce>
+		<DataProperties>
+			<itemProps>
+				<itemName Sync="TRUE">Locality_Boundaries</itemName>
+				<nativeExtBox>
+					<westBL Sync="TRUE">137.502675</westBL>
+					<eastBL Sync="TRUE">153.551940</eastBL>
+					<southBL Sync="TRUE">-29.179266</southBL>
+					<northBL Sync="TRUE">-9.087991</northBL>
+					<exTypeCode Sync="TRUE">1</exTypeCode>
+				</nativeExtBox>
+				<itemLocation>
+					<linkage Sync="TRUE">file://\\SIRGIS18\D$\sirgis-fs\customApps\QSC\working\QSC_Extracted_Data_20231003_153944228000-17116\Locality_Boundaries.shp</linkage>
+					<protocol Sync="TRUE">Local Area Network</protocol>
+				</itemLocation>
+				<imsContentType>002</imsContentType>
+				<itemSize Sync="TRUE">0.000</itemSize></itemProps>
+			<coordRef>
+				<type Sync="TRUE">Geographic</type>
+				<geogcsn Sync="TRUE">GCS_GDA_1994</geogcsn>
+				<csUnits Sync="TRUE">Angular Unit: Degree (0.017453)</csUnits>
+				<peXml Sync="TRUE">&lt;GeographicCoordinateSystem xsi:type='typens:GeographicCoordinateSystem' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/10.7'&gt;&lt;WKT&gt;GEOGCS[&amp;quot;GCS_GDA_1994&amp;quot;,DATUM[&amp;quot;D_GDA_1994&amp;quot;,SPHEROID[&amp;quot;GRS_1980&amp;quot;,6378137.0,298.257222101]],PRIMEM[&amp;quot;Greenwich&amp;quot;,0.0],UNIT[&amp;quot;Degree&amp;quot;,0.0174532925199433],AUTHORITY[&amp;quot;EPSG&amp;quot;,4283]]&lt;/WKT&gt;&lt;XOrigin&gt;-400&lt;/XOrigin&gt;&lt;YOrigin&gt;-400&lt;/YOrigin&gt;&lt;XYScale&gt;11258999068426.238&lt;/XYScale&gt;&lt;ZOrigin&gt;-100000&lt;/ZOrigin&gt;&lt;ZScale&gt;10000&lt;/ZScale&gt;&lt;MOrigin&gt;-100000&lt;/MOrigin&gt;&lt;MScale&gt;10000&lt;/MScale&gt;&lt;XYTolerance&gt;8.9831528411952133e-09&lt;/XYTolerance&gt;&lt;ZTolerance&gt;0.001&lt;/ZTolerance&gt;&lt;MTolerance&gt;0.001&lt;/MTolerance&gt;&lt;HighPrecision&gt;true&lt;/HighPrecision&gt;&lt;LeftLongitude&gt;-180&lt;/LeftLongitude&gt;&lt;WKID&gt;4283&lt;/WKID&gt;&lt;LatestWKID&gt;4283&lt;/LatestWKID&gt;&lt;/GeographicCoordinateSystem&gt;</peXml>
+			</coordRef>
+			<lineage>
+				<Process ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\TruncateTable" Date="20230519" Time="103413" Name="" export="">TruncateTable "C:\Users\kenealyc\AppData\Roaming\Esri\ArcGISPro\Favorites\Connection to sirqry(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB"</Process>
+				<Process ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\Append" Date="20230519" Time="103432" Name="" export="">Append 'C:\Users\kenealyc\AppData\Roaming\Esri\ArcGISPro\Favorites\Connection to sirupd(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB_EXT' "C:\Users\kenealyc\AppData\Roaming\Esri\ArcGISPro\Favorites\Connection to sirqry(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB" "Input fields must match target fields" # # #</Process>
+				<Process ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\TruncateTable" Date="20230523" Time="085944">TruncateTable "C:\Users\kenealyc\AppData\Roaming\Esri\ArcGISPro\Favorites\Connection to sirqry(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB"</Process>
+				<Process ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\Append" Date="20230523" Time="090007">Append 'C:\Users\kenealyc\AppData\Roaming\Esri\ArcGISPro\Favorites\Connection to sirupd(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB_EXT' "C:\Users\kenealyc\AppData\Roaming\Esri\ArcGISPro\Favorites\Connection to sirqry(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB" "Input fields must match target fields" # # #</Process>
+				<Process ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\TruncateTable" Date="20230525" Time="092645">TruncateTable "C:\Users\greyp\AppData\Roaming\Esri\ArcGISPro\Favorites\Connection to sirqry(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB"</Process>
+				<Process ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\Append" Date="20230525" Time="092705">Append 'C:\Users\greyp\AppData\Roaming\Esri\ArcGISPro\Favorites\Connection to sirupd(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB_EXT' "C:\Users\greyp\AppData\Roaming\Esri\ArcGISPro\Favorites\Connection to sirqry(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB" "Input fields must match target fields" # # #</Process>
+				<Process ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\TruncateTable" Date="20230526" Time="100801">TruncateTable "C:\Users\kenealyc\AppData\Roaming\Esri\ArcGISPro\Favorites\Connection to sirqry(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB"</Process>
+				<Process ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\Append" Date="20230526" Time="100822">Append 'C:\Users\kenealyc\AppData\Roaming\Esri\ArcGISPro\Favorites\Connection to sirupd(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB_EXT' "C:\Users\kenealyc\AppData\Roaming\Esri\ArcGISPro\Favorites\Connection to sirqry(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB" "Input fields must match target fields" # # #</Process>
+				<Process ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\TruncateTable" Date="20230530" Time="094553">TruncateTable "C:\Users\kenealyc\AppData\Roaming\Esri\ArcGISPro\Favorites\Connection to sirqry(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB"</Process>
+				<Process ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\Append" Date="20230530" Time="094615">Append 'C:\Users\kenealyc\AppData\Roaming\Esri\ArcGISPro\Favorites\Connection to sirupd(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB_EXT' "C:\Users\kenealyc\AppData\Roaming\Esri\ArcGISPro\Favorites\Connection to sirqry(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB" "Input fields must match target fields" # # #</Process>
+				<Process ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\TruncateTable" Date="20230531" Time="084131">TruncateTable "C:\Users\kenealyc\AppData\Roaming\Esri\ArcGISPro\Favorites\Connection to sirqry(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB"</Process>
+				<Process ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\Append" Date="20230531" Time="084201">Append 'C:\Users\kenealyc\AppData\Roaming\Esri\ArcGISPro\Favorites\Connection to sirupd(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB_EXT' "C:\Users\kenealyc\AppData\Roaming\Esri\ArcGISPro\Favorites\Connection to sirqry(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB" "Input fields must match target fields" # # #</Process>
+				<Process ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\TruncateTable" Date="20230602" Time="121520">TruncateTable "C:\Users\kenealyc\AppData\Roaming\Esri\ArcGISPro\Favorites\Connection to sirqry(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB"</Process>
+				<Process ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\Append" Date="20230602" Time="121540">Append 'C:\Users\kenealyc\AppData\Roaming\Esri\ArcGISPro\Favorites\Connection to sirupd(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB_EXT' "C:\Users\kenealyc\AppData\Roaming\Esri\ArcGISPro\Favorites\Connection to sirqry(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB" "Input fields must match target fields" # # #</Process>
+				<Process ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\TruncateTable" Date="20230607" Time="085714">TruncateTable "C:\Users\kenealyc\AppData\Roaming\Esri\ArcGISPro\Favorites\Connection to sirqry(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB"</Process>
+				<Process ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\Append" Date="20230607" Time="085730">Append 'C:\Users\kenealyc\AppData\Roaming\Esri\ArcGISPro\Favorites\Connection to sirupd(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB_EXT' "C:\Users\kenealyc\AppData\Roaming\Esri\ArcGISPro\Favorites\Connection to sirqry(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB" "Input fields must match target fields" # # #</Process>
+				<Process ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\TruncateTable" Date="20230608" Time="090435">TruncateTable "C:\Users\greyp\AppData\Roaming\Esri\ArcGISPro\Favorites\Connection to sirqry(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB"</Process>
+				<Process ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\Append" Date="20230608" Time="090453">Append 'C:\Users\greyp\AppData\Roaming\Esri\ArcGISPro\Favorites\Connection to sirupd(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB_EXT' "C:\Users\greyp\AppData\Roaming\Esri\ArcGISPro\Favorites\Connection to sirqry(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB" "Input fields must match target fields" # # #</Process>
+				<Process ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\TruncateTable" Date="20230612" Time="083652">TruncateTable "C:\Users\kenealyc\AppData\Roaming\Esri\ArcGISPro\Favorites\Connection to sirqry(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB"</Process>
+				<Process ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\Append" Date="20230612" Time="083714">Append 'C:\Users\kenealyc\AppData\Roaming\Esri\ArcGISPro\Favorites\Connection to sirupd(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB_EXT' "C:\Users\kenealyc\AppData\Roaming\Esri\ArcGISPro\Favorites\Connection to sirqry(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB" "Input fields must match target fields" # # #</Process>
+				<Process ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\TruncateTable" Date="20230613" Time="101147">TruncateTable "C:\Users\kenealyc\AppData\Roaming\Esri\ArcGISPro\Favorites\Connection to sirqry(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB"</Process>
+				<Process ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\Append" Date="20230613" Time="101208">Append 'C:\Users\kenealyc\AppData\Roaming\Esri\ArcGISPro\Favorites\Connection to sirupd(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB_EXT' "C:\Users\kenealyc\AppData\Roaming\Esri\ArcGISPro\Favorites\Connection to sirqry(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB" "Input fields must match target fields" # # #</Process>
+				<Process ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\TruncateTable" Date="20230619" Time="090933">TruncateTable "C:\Users\kenealyc\AppData\Roaming\Esri\ArcGISPro\Favorites\Connection to sirqry(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB"</Process>
+				<Process ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\Append" Date="20230619" Time="090955">Append 'C:\Users\kenealyc\AppData\Roaming\Esri\ArcGISPro\Favorites\Connection to sirupd(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB_EXT' "C:\Users\kenealyc\AppData\Roaming\Esri\ArcGISPro\Favorites\Connection to sirqry(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB" "Input fields must match target fields" # # #</Process>
+				<Process ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\TruncateTable" Date="20230620" Time="100112">TruncateTable "C:\Users\kenealyc\AppData\Roaming\Esri\ArcGISPro\Favorites\Connection to sirqry(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB"</Process>
+				<Process ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\Append" Date="20230620" Time="100134">Append 'C:\Users\kenealyc\AppData\Roaming\Esri\ArcGISPro\Favorites\Connection to sirupd(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB_EXT' "C:\Users\kenealyc\AppData\Roaming\Esri\ArcGISPro\Favorites\Connection to sirqry(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB" "Input fields must match target fields" # # #</Process>
+				<Process ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\TruncateTable" Date="20230621" Time="095818">TruncateTable "C:\Users\greyp\AppData\Roaming\Esri\ArcGISPro\Favorites\Connection to sirqry(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB"</Process>
+				<Process ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\Append" Date="20230621" Time="095834">Append 'C:\Users\greyp\AppData\Roaming\Esri\ArcGISPro\Favorites\Connection to sirupd(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB_EXT' "C:\Users\greyp\AppData\Roaming\Esri\ArcGISPro\Favorites\Connection to sirqry(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB" "Input fields must match target fields" # # #</Process>
+				<Process ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\TruncateTable" Date="20230626" Time="084929">TruncateTable "C:\Users\kenealyc\AppData\Roaming\Esri\ArcGISPro\Favorites\Connection to sirqry(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB"</Process>
+				<Process ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\Append" Date="20230626" Time="084951">Append 'C:\Users\kenealyc\AppData\Roaming\Esri\ArcGISPro\Favorites\Connection to sirupd(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB_EXT' "C:\Users\kenealyc\AppData\Roaming\Esri\ArcGISPro\Favorites\Connection to sirqry(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB" "Input fields must match target fields" # # #</Process>
+				<Process ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\TruncateTable" Date="20230704" Time="091044">TruncateTable "C:\Users\kenealyc\AppData\Roaming\Esri\ArcGISPro\Favorites\Connection to sirqry(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB"</Process>
+				<Process ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\Append" Date="20230704" Time="091110">Append 'C:\Users\kenealyc\AppData\Roaming\Esri\ArcGISPro\Favorites\Connection to sirupd(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB_EXT' "C:\Users\kenealyc\AppData\Roaming\Esri\ArcGISPro\Favorites\Connection to sirqry(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB" "Input fields must match target fields" # # #</Process>
+				<Process ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\TruncateTable" Date="20230706" Time="090346">TruncateTable "C:\Users\kenealyc\AppData\Roaming\Esri\ArcGISPro\Favorites\Connection to sirqry(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB"</Process>
+				<Process ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\Append" Date="20230706" Time="090408">Append 'C:\Users\kenealyc\AppData\Roaming\Esri\ArcGISPro\Favorites\Connection to sirupd(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB_EXT' "C:\Users\kenealyc\AppData\Roaming\Esri\ArcGISPro\Favorites\Connection to sirqry(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB" "Input fields must match target fields" # # #</Process>
+				<Process ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\TruncateTable" Date="20230717" Time="132454">TruncateTable "H:\Connections\on_Prem\PROD\Connection to sirqry(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB"</Process>
+				<Process ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\Append" Date="20230717" Time="132514">Append C:\Users\kenealyc\Downloads\DCDB_BOUNDARY_CHECK.gdb\Locality\QLD_LOCALITYBDY_DCDB_EXT "H:\Connections\on_Prem\PROD\Connection to sirqry(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB" "Use the field map to reconcile field differences" "ADMINTYPENAME "ADMINTYPENAME" true true false 60 Text 0 0,First,#,C:\Users\kenealyc\Downloads\DCDB_BOUNDARY_CHECK.gdb\Locality\QLD_LOCALITYBDY_DCDB_EXT,ADMINTYPENAME,0,60;ADMINAREANAME "ADMINAREANAME" true true false 60 Text 0 0,First,#,C:\Users\kenealyc\Downloads\DCDB_BOUNDARY_CHECK.gdb\Locality\QLD_LOCALITYBDY_DCDB_EXT,ADMINAREANAME,0,60;LOC_CODE "LOC_CODE" true true false 5 Text 0 0,First,#,C:\Users\kenealyc\Downloads\DCDB_BOUNDARY_CHECK.gdb\Locality\QLD_LOCALITYBDY_DCDB_EXT,LOC_CODE,0,5;SE_ANNO_CAD_DATA "SE_ANNO_CAD_DATA" true true false 0 Blob 0 0,First,#,C:\Users\kenealyc\Downloads\DCDB_BOUNDARY_CHECK.gdb\Locality\QLD_LOCALITYBDY_DCDB_EXT,SE_ANNO_CAD_DATA,-1,-1;LOCALITY "LOCALITY" true true false 38 Text 0 0,First,#,C:\Users\kenealyc\Downloads\DCDB_BOUNDARY_CHECK.gdb\Locality\QLD_LOCALITYBDY_DCDB_EXT,LOCALITY,0,38;LGA "LGA" true true false 38 Text 0 0,First,#,C:\Users\kenealyc\Downloads\DCDB_BOUNDARY_CHECK.gdb\Locality\QLD_LOCALITYBDY_DCDB_EXT,LGA,0,38;CA_AREA_SQKM "CA_AREA_SQKM" true true false 8 Double 10 38,First,#,C:\Users\kenealyc\Downloads\DCDB_BOUNDARY_CHECK.gdb\Locality\QLD_LOCALITYBDY_DCDB_EXT,CA_AREA_SQKM,-1,-1" # #</Process>
+				<Process ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\TruncateTable" Date="20230719" Time="104641">TruncateTable "C:\Users\kenealyc\AppData\Roaming\Esri\ArcGISPro\Favorites\Connection to sirqry(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB"</Process>
+				<Process ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\Append" Date="20230719" Time="104701">Append C:\Users\kenealyc\Downloads\DCDB_BOUNDARY_CHECK.gdb\Locality\QLD_LOCALITYBDY_DCDB_EXT "C:\Users\kenealyc\AppData\Roaming\Esri\ArcGISPro\Favorites\Connection to sirqry(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB" "Input fields must match target fields" # # #</Process>
+				<Process ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\TruncateTable" Date="20230725" Time="143800">TruncateTable "C:\Users\kenealyc\AppData\Roaming\Esri\ArcGISPro\Favorites\Connection to sirqry(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB"</Process>
+				<Process ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\Append" Date="20230725" Time="143820">Append C:\Users\kenealyc\Downloads\DCDB_BOUNDARY_CHECK.gdb\Locality\QLD_LOCALITYBDY_DCDB_EXT "C:\Users\kenealyc\AppData\Roaming\Esri\ArcGISPro\Favorites\Connection to sirqry(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB" "Input fields must match target fields" # # #</Process>
+				<Process ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\TruncateTable" Date="20230822" Time="112122">TruncateTable "C:\Users\kenealyc\AppData\Roaming\Esri\ArcGISPro\Favorites\Connection to sirqry(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB"</Process>
+				<Process ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\Append" Date="20230822" Time="112138">Append 'H:\Connections\on_Prem\PROD\Connection to sirupd(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB_EXT' "C:\Users\kenealyc\AppData\Roaming\Esri\ArcGISPro\Favorites\Connection to sirqry(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB" "Input fields must match target fields" # # #</Process>
+				<Process ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\TruncateTable" Date="20230823" Time="083438">TruncateTable "C:\Users\greyp\AppData\Roaming\Esri\ArcGISPro\Favorites\Connection to sirqry(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB"</Process>
+				<Process ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\Append" Date="20230823" Time="083452">Append 'C:\Users\greyp\AppData\Roaming\Esri\ArcGISPro\Favorites\Connection to sirupd(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB_EXT' "C:\Users\greyp\AppData\Roaming\Esri\ArcGISPro\Favorites\Connection to sirqry(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB" "Input fields must match target fields" # # #</Process>
+				<Process ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\TruncateTable" Date="20230828" Time="101109">TruncateTable "C:\Users\kenealyc\AppData\Roaming\Esri\ArcGISPro\Favorites\Connection to sirqry(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB"</Process>
+				<Process ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\Append" Date="20230828" Time="101126">Append 'H:\Connections\on_Prem\PROD\Connection to sirupd(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB_EXT' "C:\Users\kenealyc\AppData\Roaming\Esri\ArcGISPro\Favorites\Connection to sirqry(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB" "Input fields must match target fields" # # #</Process>
+				<Process ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\TruncateTable" Date="20230829" Time="105148">TruncateTable "C:\Users\kenealyc\AppData\Roaming\Esri\ArcGISPro\Favorites\Connection to sirqry(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB"</Process>
+				<Process ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\Append" Date="20230829" Time="105207">Append 'H:\Connections\on_Prem\PROD\Connection to sirupd(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB_EXT' "C:\Users\kenealyc\AppData\Roaming\Esri\ArcGISPro\Favorites\Connection to sirqry(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB" "Input fields must match target fields" # # #</Process>
+				<Process ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\TruncateTable" Date="20230830" Time="110525">TruncateTable "C:\Users\kenealyc\AppData\Roaming\Esri\ArcGISPro\Favorites\Connection to sirqry(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB"</Process>
+				<Process ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\Append" Date="20230830" Time="110541">Append 'H:\Connections\on_Prem\PROD\Connection to sirupd(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB_EXT' "C:\Users\kenealyc\AppData\Roaming\Esri\ArcGISPro\Favorites\Connection to sirqry(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB" "Input fields must match target fields" # # #</Process>
+				<Process ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\TruncateTable" Date="20230904" Time="083618">TruncateTable "C:\Users\kenealyc\AppData\Roaming\Esri\ArcGISPro\Favorites\Connection to sirqry(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB"</Process>
+				<Process ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\Append" Date="20230904" Time="083637">Append 'H:\Connections\on_Prem\PROD\Connection to sirupd(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB_EXT' "C:\Users\kenealyc\AppData\Roaming\Esri\ArcGISPro\Favorites\Connection to sirqry(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB" "Input fields must match target fields" # # #</Process>
+				<Process ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\TruncateTable" Date="20230911" Time="120006">TruncateTable "C:\Users\kenealyc\AppData\Roaming\Esri\ArcGISPro\Favorites\Connection to sirqry(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB"</Process>
+				<Process ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\Append" Date="20230911" Time="120022">Append 'H:\Connections\on_Prem\PROD\Connection to sirupd(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB_EXT' "C:\Users\kenealyc\AppData\Roaming\Esri\ArcGISPro\Favorites\Connection to sirqry(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB" "Input fields must match target fields" # # #</Process>
+				<Process ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\TruncateTable" Date="20230918" Time="092326">TruncateTable "C:\Users\kenealyc\AppData\Roaming\Esri\ArcGISPro\Favorites\Connection to sirqry(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB"</Process>
+				<Process ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\Append" Date="20230918" Time="092342">Append 'H:\Connections\on_Prem\PROD\Connection to sirupd(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB_EXT' "C:\Users\kenealyc\AppData\Roaming\Esri\ArcGISPro\Favorites\Connection to sirqry(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB" "Input fields must match target fields" # # #</Process>
+				<Process ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\TruncateTable" Date="20230920" Time="092006">TruncateTable "C:\Users\kenealyc\AppData\Roaming\Esri\ArcGISPro\Favorites\Connection to sirqry(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB"</Process>
+				<Process ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\Append" Date="20230920" Time="092019">Append 'H:\Connections\on_Prem\PROD\Connection to sirupd(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB_EXT' "C:\Users\kenealyc\AppData\Roaming\Esri\ArcGISPro\Favorites\Connection to sirqry(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB" "Input fields must match target fields" # # #</Process>
+				<Process ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\TruncateTable" Date="20230926" Time="091437">TruncateTable "C:\Users\kenealyc\AppData\Roaming\Esri\ArcGISPro\Favorites\Connection to sirqry(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB"</Process>
+				<Process ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\Append" Date="20230926" Time="091453">Append 'H:\Connections\on_Prem\PROD\Connection to sirupd(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB_EXT' "C:\Users\kenealyc\AppData\Roaming\Esri\ArcGISPro\Favorites\Connection to sirqry(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB" "Input fields must match target fields" # # #</Process>
+				<Process ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\TruncateTable" Date="20230926" Time="094018">TruncateTable "C:\Users\kenealyc\AppData\Roaming\Esri\ArcGISPro\Favorites\Connection to sirqry(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB"</Process>
+				<Process ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\Append" Date="20230926" Time="094031">Append 'H:\Connections\on_Prem\PROD\Connection to sirupd(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB_EXT' "C:\Users\kenealyc\AppData\Roaming\Esri\ArcGISPro\Favorites\Connection to sirqry(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB" "Input fields must match target fields" # # #</Process>
+				<Process ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\TruncateTable" Date="20230928" Time="090159">TruncateTable "C:\Users\greyp\AppData\Roaming\Esri\ArcGISPro\Favorites\Connection to sirqry(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB"</Process>
+				<Process ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\Append" Date="20230928" Time="090214">Append 'C:\Users\Greyp\Documents\ArcGIS\Connection to sirupd(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB_EXT' "C:\Users\greyp\AppData\Roaming\Esri\ArcGISPro\Favorites\Connection to sirqry(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB" "Input fields must match target fields" # # #</Process>
+				<Process ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\TruncateTable" Date="20231003" Time="090807">TruncateTable "C:\Users\kenealyc\AppData\Roaming\Esri\ArcGISPro\Favorites\Connection to sirqry(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB"</Process>
+				<Process ToolSource="c:\program files\arcgis\pro\Resources\ArcToolbox\toolboxes\Data Management Tools.tbx\Append" Date="20231003" Time="090820">Append 'H:\Connections\on_Prem\PROD\Connection to sirupd(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB_EXT' "C:\Users\kenealyc\AppData\Roaming\Esri\ArcGISPro\Favorites\Connection to sirqry(PROP).sde\PROP.QLD_LOCALITYBDY_DCDB" "Input fields must match target fields" # # #</Process>
+			</lineage>
+		</DataProperties>
+		<SyncDate>20231003</SyncDate>
+		<SyncTime>15402400</SyncTime>
+		<ModDate>20231003</ModDate>
+		<ModTime>15402400</ModTime>
+		<ArcGISProfile>ISO19139</ArcGISProfile>
+		<locales>
+			<locale language="eng" country="">
+			</locale>
+		</locales>
+	</Esri>
+	<eainfo>
+		<detailed Name="Locality_Boundaries">
+			<enttyp>
+				<enttypl Sync="FALSE">Queensland Locality Boundaries</enttypl>
+				<enttypt Sync="TRUE">Feature Class</enttypt>
+				<enttypc Sync="FALSE">3384</enttypc>
+				<enttypd>Locality Boundaries dataset is the spatial representation of all localities within each local goverment area of Queensland.</enttypd>
+				<enttypds>Department of Natural Resources, Mines and Energy</enttypds>
+			</enttyp>
+			<attr><attrlabl Sync="TRUE">FID</attrlabl><attalias Sync="TRUE">FID</attalias><attrtype Sync="TRUE">OID</attrtype><attwidth Sync="TRUE">4</attwidth><atprecis Sync="TRUE">0</atprecis><attscale Sync="TRUE">0</attscale><attrdef Sync="TRUE">Internal feature number.</attrdef><attrdefs Sync="TRUE">Esri</attrdefs><attrdomv><udom Sync="TRUE">Sequential unique whole numbers that are automatically generated.</udom></attrdomv></attr><attr>
+				<attrlabl Sync="TRUE">LOC_CODE</attrlabl>
+				<attalias Sync="TRUE">LOC_CODE</attalias>
+				<attrtype Sync="TRUE">String</attrtype>
+				<attwidth Sync="TRUE">5</attwidth>
+				<atprecis Sync="TRUE">0</atprecis>
+				<attscale Sync="TRUE">0</attscale>
+				<attrdef>Locality Code is a unique identifier taken from the corresponding locality boundary in the DCDB.</attrdef>
+				<attrdefs>DCDB</attrdefs>
+				<attrdomv>
+					<udom>Locality Code is a unique 4 digit code generated within the DCDB to identify individual localities.</udom>
+				</attrdomv>
+			</attr>
+			<attr><attrlabl Sync="TRUE">ADMINTYPEN</attrlabl><attalias Sync="TRUE">ADMINTYPEN</attalias><attrtype Sync="TRUE">String</attrtype><attwidth Sync="TRUE">60</attwidth><atprecis Sync="TRUE">0</atprecis><attscale Sync="TRUE">0</attscale></attr><attr><attrlabl Sync="TRUE">ADMINAREAN</attrlabl><attalias Sync="TRUE">ADMINAREAN</attalias><attrtype Sync="TRUE">String</attrtype><attwidth Sync="TRUE">60</attwidth><atprecis Sync="TRUE">0</atprecis><attscale Sync="TRUE">0</attscale></attr><attr>
+				<attrlabl Sync="TRUE">SHAPE</attrlabl>
+				<attalias Sync="TRUE">Shape</attalias>
+				<attrtype Sync="TRUE">Geometry</attrtype>
+				<attwidth Sync="TRUE">0</attwidth>
+				<atprecis Sync="TRUE">0</atprecis>
+				<attscale Sync="TRUE">0</attscale>
+				<attrdef Sync="FALSE">Feature geometry - Polygon</attrdef>
+				<attrdefs Sync="TRUE">ESRI</attrdefs>
+				<attrdomv>
+					<udom Sync="TRUE">Coordinates defining the features.</udom>
+				</attrdomv>
+			</attr>
+			<attr>
+				<attrlabl Sync="TRUE">LOCALITY</attrlabl>
+				<attalias Sync="TRUE">LOCALITY</attalias>
+				<attrtype Sync="TRUE">String</attrtype>
+				<attwidth Sync="TRUE">38</attwidth>
+				<atprecis Sync="TRUE">0</atprecis>
+				<attscale Sync="TRUE">0</attscale>
+				<attrdef>Gazetted Locality Name only, in upper and lower case. Extracted from ADMINAREANAME attribute. </attrdef>
+				<attrdefs>Department of Natural Resources, Mines and Energy</attrdefs>
+				<attrdomv>
+					<udom>Locality Name as gazetted in accordance with the Place Names Act 1994.</udom>
+				</attrdomv>
+			</attr>
+			<attr>
+				<attrlabl Sync="TRUE">LGA</attrlabl>
+				<attalias Sync="TRUE">LGA</attalias>
+				<attrtype Sync="TRUE">String</attrtype>
+				<attwidth Sync="TRUE">38</attwidth>
+				<atprecis Sync="TRUE">0</atprecis>
+				<attscale Sync="TRUE">0</attscale>
+				<attrdef>Local Government Authority name only, in upper and lower case. Extracted from ADMINAREANAME attribute.
+</attrdef>
+				<attrdefs>Department of Natural Resources, Mines and Energy</attrdefs>
+				<attrdomv>
+					<udom>Local Government Authority name as gazetted under the Local Government Act 2009</udom>
+				</attrdomv>
+			</attr>
+			<attr><attrlabl Sync="TRUE">CA_AREA_SQ</attrlabl><attalias Sync="TRUE">CA_AREA_SQ</attalias><attrtype Sync="TRUE">Double</attrtype><attwidth Sync="TRUE">19</attwidth><atprecis Sync="TRUE">0</atprecis><attscale Sync="TRUE">0</attscale></attr><attr><attrlabl Sync="TRUE">SHAPE_Leng</attrlabl><attalias Sync="TRUE">SHAPE_Leng</attalias><attrtype Sync="TRUE">Double</attrtype><attwidth Sync="TRUE">19</attwidth><atprecis Sync="TRUE">0</atprecis><attscale Sync="TRUE">0</attscale></attr><attr><attrlabl Sync="TRUE">SHAPE_Area</attrlabl><attalias Sync="TRUE">SHAPE_Area</attalias><attrtype Sync="TRUE">Double</attrtype><attwidth Sync="TRUE">19</attwidth><atprecis Sync="TRUE">0</atprecis><attscale Sync="TRUE">0</attscale><attrdef Sync="TRUE">Area of feature in internal units squared.</attrdef><attrdefs Sync="TRUE">Esri</attrdefs><attrdomv><udom Sync="TRUE">Positive real numbers that are automatically generated.</udom></attrdomv></attr></detailed>
+	</eainfo>
+	<Binary>
+		<Thumbnail>
+			<Data EsriPropertyType="PictureX">/9j/4AAQSkZJRgABAQEAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0a
+HBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIy
+MjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCACFAMgDASIA
+AhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQA
+AAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3
+ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWm
+p6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEA
+AwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSEx
+BhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElK
+U1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3
+uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD3+iii
+gAooooAKKKKACiiigApk00dvC80rhI0UszHsBT65m/aS4kOpJ+4heHyQ8rgfKckHjO1WO0EnJ6fd
+wcxOpGCvIaVzetr61vED29xHKNob5WBIB6EjtSW+oWt1LJFDOjSISCueeOCQO4zxnpXOaNYWM4zD
+HDJAsaCQeYZU8zDZHPUjK9R3rWsLWH+17meKOKMQr5GEQBiThySfTlcD61jDEqdTkSG1ZXNaiiiu
+kkKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAhnu7a1Ki4uIoi2dvmOFzjrjP1F
+Rf2rp3/P/a/9/l/xplz/AMhW29oJc/8AfSVLXFXxbpT5bFKNxv8Aaunf8/8Aa/8Af5f8a5mawQ+H
+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
+FFFABRRRQAUUUUAf/9k=</Data>
+		</Thumbnail>
+	</Binary>
+	<mdFileID>acebf5e0-03a8-445a-a69d-9d40f460ca06</mdFileID>
+	<mdLang>
+		<languageCode value="eng"/>
+		<countryCode value="AUS" Sync="TRUE"></countryCode></mdLang>
+	<mdChar>
+		<CharSetCd value="004"/>
+	</mdChar>
+	<mdHrLv>
+		<ScopeCd value="005"/>
+	</mdHrLv>
+	<mdHrLvName>dataset</mdHrLvName>
+	<mdContact>
+		<rpIndName>Resources, Georesources, SI, SD, Manager Location Data</rpIndName>
+		<rpOrgName>Department of Resources</rpOrgName>
+		<rpPosName>Senior Spatial Information Officer</rpPosName>
+		<rpCntInfo>
+			<cntAddress>
+				<eMailAdd>AdminBoundaries@resources.qld.gov.au</eMailAdd>
+			</cntAddress>
+		</rpCntInfo>
+		<role>
+			<RoleCd value="006"/>
+		</role>
+	</mdContact>
+	<mdDateSt>20230519</mdDateSt>
+	<mdStanName>ArcGIS Metadata</mdStanName>
+	<mdStanVer>1.0</mdStanVer>
+	<distInfo>
+		<distributor>
+			<distorCont>
+				<rpIndName>Resources, Open Data</rpIndName>
+				<rpOrgName>Department of Resources</rpOrgName>
+				<rpPosName>Senior Product Officer</rpPosName>
+				<rpCntInfo>
+					<cntPhone>
+						<voiceNum>(07) 3330 4438</voiceNum>
+					</cntPhone>
+					<cntAddress>
+						<eMailAdd>opendata@resources.qld.gov.au</eMailAdd>
+					</cntAddress>
+				</rpCntInfo>
+				<role>
+					<RoleCd value="005"/>
+				</role>
+			</distorCont>
+			<distorOrdPrc>
+				<ordInstr>Open the Queensland Spatial Catalogue (QSpatial).
+Select the large SEARCH button and all available records are displayed.
+Select one of the four filter options provided and then the further options within the filter.
+The resultant search is then displayed.
+Select your record and complete the order.</ordInstr>
+			</distorOrdPrc>
+			<distorFormat>
+				<formatName>Queensland Spatial Catalogue</formatName>
+				<formatVer>2.0</formatVer>
+				<formatSpec>SHP, TAB, FGDB, KMZ</formatSpec>
+			</distorFormat>
+			<distorTran>
+				<unitsODist>Whole of dataset, although clipped areas are available through QSpatial.</unitsODist>
+				<transSize>1</transSize>
+				<onLineSrc>
+					<linkage>http://qldspatial.information.qld.gov.au/catalogue/custom/search.page?q=%22Locality Boundaries - Queensland%22</linkage>
+				</onLineSrc>
+			</distorTran>
+		</distributor>
+		<distFormat><formatName Sync="TRUE">Shapefile</formatName></distFormat><distTranOps><transSize Sync="TRUE">0.000</transSize></distTranOps></distInfo>
+	<dataIdInfo>
+		<idCitation>
+			<resTitle>Locality Boundaries - Queensland</resTitle>
+			<resAltTitle>Locality Boundaries</resAltTitle>
+			<date>
+				<pubDate>2018-10-22</pubDate>
+				<reviseDate>2023-10-03</reviseDate>
+			</date>
+			<citRespParty>
+				<rpIndName>Resources, Georesources, SI, ED</rpIndName>
+				<rpOrgName>Department of Resources</rpOrgName>
+				<rpPosName>Executive Director, Spatial Information</rpPosName>
+				<role>
+					<RoleCd value="002"/>
+				</role>
+			</citRespParty>
+			<citRespParty>
+				<rpIndName>Resources, Georesources, SI, SD, Manager Location Data</rpIndName>
+				<rpOrgName>Department of Resources</rpOrgName>
+				<rpPosName>Manager Location Data, Spatial Data, Spatial Information</rpPosName>
+				<role>
+					<RoleCd value="001"/>
+				</role>
+			</citRespParty>
+			<citRespParty>
+				<rpIndName>Resources, Georesources, SI, SD, Manager Location Data</rpIndName>
+				<rpOrgName>Department of Resources</rpOrgName>
+				<rpPosName>Manager Location Data, Spatial Data, Spatial Information</rpPosName>
+				<role>
+					<RoleCd value="008"/>
+				</role>
+			</citRespParty>
+			<citRespParty>
+				<rpIndName>Resources, Georesources, SI, SD, Manager Location Data</rpIndName>
+				<rpOrgName>Department of Resources</rpOrgName>
+				<rpPosName>Manager Location Data, Spatial Data, Spatial Information</rpPosName>
+				<rpCntInfo>
+					<cntAddress>
+						<eMailAdd>AdminBoundaries@resources.qld.gov.au</eMailAdd>
+					</cntAddress>
+				</rpCntInfo>
+				<role>
+					<RoleCd value="006"/>
+				</role>
+			</citRespParty>
+			<citRespParty>
+				<rpIndName>Resources, Georesources, SI, SD, Manager Location Data</rpIndName>
+				<rpOrgName>Department of Resources</rpOrgName>
+				<rpPosName>Manager Location Data, Spatial Data, Spatial Information</rpPosName>
+				<rpCntInfo>
+					<cntAddress>
+						<eMailAdd>AdminBoundaries@resources.qld.gov.au</eMailAdd>
+					</cntAddress>
+				</rpCntInfo>
+				<role>
+					<RoleCd value="007"/>
+				</role>
+			</citRespParty>
+			<presForm>
+				<PresFormCd value="005"/>
+			</presForm>
+		</idCitation>
+		<idAbs>The Administrative Boundaries - Locality Boundaries Dataset is the spatial representation of the Localities of Queensland.</idAbs>
+		<idPurp>Dataset provides boundaries of Localities in Queensland.</idPurp>
+		<idCredit>© State of Queensland (Department of Resources) 2023</idCredit>
+		<idStatus>
+			<ProgCd value="004"/>
+		</idStatus>
+		<idPoC>
+			<rpIndName>Resources, Georesources, SI, SD, Manager Location Data</rpIndName>
+			<rpOrgName>Department of Resources</rpOrgName>
+			<rpPosName>Senior Spatial Information Officer</rpPosName>
+			<rpCntInfo>
+				<cntAddress>
+					<eMailAdd>AdminBoundaries@resources.qld.gov.au</eMailAdd>
+				</cntAddress>
+			</rpCntInfo>
+			<role>
+				<RoleCd value="006"/>
+			</role>
+		</idPoC>
+		<resMaint>
+			<maintFreq>
+				<MaintFreqCd value="009"/>
+			</maintFreq>
+			<maintCont>
+				<rpIndName>Resources, Georesources, SI, SD, Manager Location Data</rpIndName>
+				<rpOrgName>Department of Resources</rpOrgName>
+				<rpPosName>Senior Spatial Information Officer</rpPosName>
+				<rpCntInfo>
+					<cntAddress>
+						<eMailAdd>AdminBoundaries@resources.qld.gov.au</eMailAdd>
+					</cntAddress>
+				</rpCntInfo>
+				<role>
+					<RoleCd value="006"/>
+				</role>
+			</maintCont>
+		</resMaint>
+		<placeKeys>
+			<keyword>Queensland</keyword>
+			<keyword>Local Government Areas (LGA)</keyword>
+			<thesaName>
+				<resTitle>ANZLIC Search Words</resTitle>
+				<date>
+					<pubDate>2007-08-01</pubDate>
+				</date>
+			</thesaName>
+		</placeKeys>
+		<themeKeys>
+			<keyword>locality boundary</keyword>
+			<keyword>boundary administrative</keyword>
+			<thesaName>
+				<resTitle>Common Search Terms</resTitle>
+				<date>
+					<pubDate>2017-12-18</pubDate>
+				</date>
+			</thesaName>
+		</themeKeys>
+		<themeKeys>
+			<keyword>BOUNDARIES Administrative</keyword>
+			<thesaName>
+				<resTitle>ANZLIC Search Words</resTitle>
+				<date>
+					<pubDate>2007-08-01</pubDate>
+				</date>
+			</thesaName>
+		</themeKeys>
+		<searchKeys>
+			<keyword>Queensland</keyword>
+			<keyword>Local Government Areas (LGA)</keyword>
+			<keyword>locality boundary</keyword>
+			<keyword>boundary administrative</keyword>
+			<keyword>BOUNDARIES Administrative</keyword>
+		</searchKeys>
+		<resConst>
+			<Consts>
+				<useLimit>Please note that the QPN plans (Qld Place Name Plans) still remain the point of truth for locality boundary descriptions.</useLimit>
+			</Consts>
+		</resConst>
+		<resConst>
+			<LegConsts>
+				<useLimit>The State of Queensland (Department of Resources)</useLimit>
+				<useConsts>
+					<RestrictCd value="006"/>
+				</useConsts>
+			</LegConsts>
+		</resConst>
+		<resConst>
+			<LegConsts>
+				<useLimit>This material is licensed under a &lt;a rel="license" href="http://creativecommons.org/licenses/by/4.0/ "&gt;
+Creative Commons - Attribution 4.0 International&lt;/a&gt; licence. &lt;br /&gt;
+&lt;a rel="license" href="http://creativecommons.org/licenses/by/4.0/ "&gt;&lt;img alt="Creative Commons License" title="Creative Commons - Attribution 4.0 International License" style="border: 0;" src="https://licensebuttons.net/l/by/4.0/88x31.png " /&gt;&lt;/a&gt;&lt;br /&gt;
+The Department of Resources requests attribution in the following manner:&lt;br /&gt;
+&amp;#169; State of Queensland (Department of Resources) 2021. Updated data available at http://qldspatial.information.qld.gov.au/catalogue/ .</useLimit>
+				<useConsts>
+					<RestrictCd value="005"/>
+				</useConsts>
+			</LegConsts>
+		</resConst>
+		<resConst>
+			<SecConsts>
+				<class>
+					<ClasscationCd value="001"/>
+				</class>
+				<userNote>Unrestricted to all levels of government and community. Data is available to all government agencies, community groups and individuals. Dataset is available through physical supply and may be made available via web delivery tools, for example, through DNRME's internet sites.</userNote>
+				<classSys>ISO 19115 (mapped from Qld Govt Information Security Standard IS18)</classSys>
+			</SecConsts>
+		</resConst>
+		<aggrInfo>
+			<aggrDSIdent>
+				<identAuth>
+					<resTitle>Spatial Information Resource (SIR) Feature Class</resTitle>
+					<date>
+						<pubDate>2018-10-22</pubDate>
+						<reviseDate>2023-10-03</reviseDate>
+					</date>
+				</identAuth>
+				<identCode>PROP.QLD_LOCALITYBDY_DCDB</identCode>
+			</aggrDSIdent>
+			<assocType>
+				<AscTypeCd value="004"/>
+			</assocType>
+		</aggrInfo>
+		<spatRpType>
+			<SpatRepTypCd value="001"/>
+		</spatRpType>
+		<dataLang>
+			<languageCode value="eng"/>
+			<countryCode value="AUS" Sync="TRUE"></countryCode></dataLang>
+		<dataChar>
+			<CharSetCd value="004"/>
+		</dataChar>
+		<tpCat>
+			<TopicCatCd value="003"/>
+		</tpCat>
+		<envirDesc> Version 6.2 (Build 9200) ; Esri ArcGIS 10.7.1.11595</envirDesc>
+		<dataExt>
+			<exDesc>Bounding Box</exDesc>
+			<geoEle>
+				<GeoBndBox>
+					<exTypeCode>true</exTypeCode>
+					<westBL>137.502675</westBL>
+					<eastBL>153.55194</eastBL>
+					<southBL>-29.179266</southBL>
+					<northBL>-9.087991</northBL>
+				</GeoBndBox>
+			</geoEle>
+		</dataExt>
+		<dataExt>
+			<geoEle>
+				<GeoBndBox>
+					<exTypeCode>true</exTypeCode>
+					<westBL>137.502675</westBL>
+					<eastBL>153.55194</eastBL>
+					<southBL>-29.179266</southBL>
+					<northBL>-9.087991</northBL>
+				</GeoBndBox>
+			</geoEle>
+		</dataExt>
+		<dataExt>
+			<geoEle>
+				<GeoBndBox>
+					<exTypeCode>true</exTypeCode>
+					<westBL>137.502675</westBL>
+					<eastBL>153.55194</eastBL>
+					<southBL>-29.179266</southBL>
+					<northBL>-9.087991</northBL>
+				</GeoBndBox>
+			</geoEle>
+		</dataExt>
+		<dataExt>
+			<geoEle>
+				<GeoBndBox>
+					<exTypeCode>true</exTypeCode>
+					<westBL>137.502675</westBL>
+					<eastBL>153.55194</eastBL>
+					<southBL>-29.179266</southBL>
+					<northBL>-9.087991</northBL>
+				</GeoBndBox>
+			</geoEle>
+		</dataExt>
+		<dataExt>
+			<geoEle>
+				<GeoBndBox>
+					<exTypeCode>true</exTypeCode>
+					<westBL>137.502675</westBL>
+					<eastBL>153.55194</eastBL>
+					<southBL>-29.179266</southBL>
+					<northBL>-9.087991</northBL>
+				</GeoBndBox>
+			</geoEle>
+		</dataExt>
+		<suppInfo>The locality boundaries dataset is the spatial representation of bounded localities (includes suburbs) of Queensland.  These are the official locality names and boundaries used for addressing. This dataset consists of contiguous polygons in a single layer.
+
+Locality boundaries are maintained in accordance with the Queensland Place Names Act 1994 and aligned with cadastral boundaries as shown on Queensland Place Names (QPN) plans. QPN plan boundaries are reflected in the Digital Cadastral Database (DCDB) and each parcel has a locality attribute. To create this product, DCDB data is extracted then dissolved based on the locality attribute. The resulting polygons are checked for differences against the previous version of the product (only official boundary amendments or DCDB boundary upgrades should be present).
+
+All of the unofficial locality polygons that are within the “Queensland Extent” area in the DCDB will be renamed to ‘External Locality’ as they are not located inside any Qld jurisdiction area. All of the other unofficial locality polygons that fall within an official LGA area in the DCDB will be renamed to ‘Unnamed Locality’. The exception to the above is the official locality of Moreton Bay, part of which falls outside of the Brisbane City LGA but is still a gazetted locality of Brisbane City. This part will remain named as ‘Moreton Bay’ (LOC 5785) in the DCDB and is merged with LOC 5788 (Moreton Bay within BCC) into one polygon in the Locality Boundaries dataset.
+
+The Queensland Locality Boundaries dataset can be downloaded via the Queensland Spatial Catalogue (QSpatial) website:
+ at http://qldspatial.information.qld.gov.au/catalogue/
+</suppInfo>
+	</dataIdInfo>
+	<mdMaint>
+		<maintFreq>
+			<MaintFreqCd value="009"/>
+		</maintFreq>
+	</mdMaint>
+	<mdConst>
+		<SecConsts>
+			<useLimit>Public</useLimit>
+			<class>
+				<ClasscationCd value="001"/>
+			</class>
+			<classSys>Metadata Access Level</classSys>
+		</SecConsts>
+	</mdConst>
+	<dqInfo>
+		<dqScope>
+			<scpLvl>
+				<ScopeCd value="005"/>
+			</scpLvl>
+		</dqScope>
+		<report type="DQConcConsis">
+			<measDesc>The Locality Boundaries Dataset consists of polygons in a single layer. Polygons are contiguous with surrounding polygons. Any errors found are corrected and the data reprocessed.</measDesc>
+			<measResult>
+				<ConResult>
+					<conSpec>
+						<resTitle>Department of Resources data capture process</resTitle>
+						<date>
+							<pubDate>2017-07-19</pubDate>
+						</date>
+					</conSpec>
+					<conExpl>The data is to a standard determined as fit for the purpose for which it was collected.</conExpl>
+					<conPass>true</conPass>
+				</ConResult>
+			</measResult>
+		</report>
+		<report type="DQCompOm">
+			<measDesc>Completeness of coverage :
+   The Locality Boundaries Dataset is built up from each Local Government`s localities as
+   they are gazetted and the DCDB updated. 
+
+   Completeness of verification : 
+   The dataset has been investigated for completeness by visual inspection and comparing differences between the new localities dataset which is extracted nightly from the DCDB and the current standalone master dataset. The locality boundaries are also compared to the gazetted QPN plans. Please note that these QPN plans still remain the point of truth for locality boundary descriptions.
+</measDesc>
+			<measResult>
+				<ConResult>
+					<conSpec>
+						<resTitle>Department of Resources data capture process</resTitle>
+						<date>
+							<pubDate>2017-07-19</pubDate>
+						</date>
+					</conSpec>
+					<conExpl>The data is to a standard determined as fit for the purpose for which it was collected.</conExpl>
+					<conPass>true</conPass>
+				</ConResult>
+			</measResult>
+		</report>
+		<report type="DQQuanAttAcc">
+			<measDesc>The attributes of Administrative Area Type, Administrative Area Name and LOC Code are validated by comparing the new generated dataset against the existing current dataset and the gazetted departmental Locality Boundary QPN plans. The attribute accuracy is 98% reliable. The attribute CA_AREA_SQKM is a calculated field which reflects the area of each polygon in square kilometers.</measDesc>
+			<measResult>
+				<ConResult>
+					<conSpec>
+						<resTitle>Department of Resources data capture process</resTitle>
+						<date>
+							<pubDate>2017-07-19</pubDate>
+						</date>
+					</conSpec>
+					<conExpl>The data is to a standard determined as fit for the purpose for which it was collected.</conExpl>
+					<conPass>true</conPass>
+				</ConResult>
+			</measResult>
+		</report>
+		<report type="DQAbsExtPosAcc">
+			<measDesc>No positional accuracy statements are attached to this file. The positional accuracy of the data is equivalent to that of the DCDB at the time of extraction. There may be degradation of the positional accuracy in the translation to MapInfo and ArcView formats.</measDesc>
+			<measResult>
+				<ConResult>
+					<conSpec>
+						<resTitle>Department of Resources data capture process</resTitle>
+						<date>
+							<pubDate>2017-07-19</pubDate>
+						</date>
+					</conSpec>
+					<conExpl>The data is to a standard determined as fit for the purpose for which it was collected.</conExpl>
+					<conPass>true</conPass>
+				</ConResult>
+			</measResult>
+		</report>
+		<dataLineage>
+			<statement>The Locality Boundaries Dataset is created by several processes. Firstly the Queensland Place Names (QPN) plans are prepared in MapInfo for each Local Government area (LGA) by creating locality polygons that are snapped to the Digital Cadastral Database (DCDB). The gazetted QPN plan is then used as reference to split road and watercourse polygons in the DCDB, and update polygons to the gazetted locality. When all polygons have been created or changed to match the QPN plan, the results are checked for accuracy. An extraction from the DCDB is done of all parcels in the Local Government area and these parcels are then combined by the Locality Code attribute in MapInfo. The resulting polygons are checked for errors and then combined with other completed Local Government areas to make up the Locality Boundaries Dataset.</statement>
+			<dataSource>
+				<srcDesc>QPN Plans</srcDesc>
+			</dataSource>
+			<dataSource>
+				<srcDesc>DCDB - Locality Boundaries and Locality Codes</srcDesc>
+			</dataSource>
+		</dataLineage>
+	</dqInfo>
+	<spatRepInfo>
+		<VectSpatRep><geometObjs Name="Locality_Boundaries"><geoObjTyp><GeoObjTypCd value="002" Sync="TRUE"></GeoObjTypCd></geoObjTyp><geoObjCnt Sync="TRUE">0</geoObjCnt></geometObjs><topLvl><TopoLevCd value="001" Sync="TRUE"></TopoLevCd></topLvl></VectSpatRep></spatRepInfo>
+	<refSysInfo>
+		<RefSystem>
+			<refSysID>
+				<identCode code="4283"/>
+				<idCodeSpace>EPSG</idCodeSpace>
+				<idVersion Sync="TRUE">8.3.4(3.0.1)</idVersion></refSysID>
+		</RefSystem>
+	</refSysInfo>
+	<spdoinfo><ptvctinf><esriterm Name="Locality_Boundaries"><efeatyp Sync="TRUE">Simple</efeatyp><efeageom code="4" Sync="TRUE"></efeageom><esritopo Sync="TRUE">FALSE</esritopo><efeacnt Sync="TRUE">0</efeacnt><spindex Sync="TRUE">FALSE</spindex><linrefer Sync="TRUE">FALSE</linrefer></esriterm></ptvctinf></spdoinfo></metadata>

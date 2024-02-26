@@ -1,6 +1,6 @@
 # What is this place??
-__A repo containing code for the [Data Management Working Group] Power BI environment.__
-__DO NOT Upload .pbix files__, because `.pbix` type files contain the associated data (if providing legacy support, these should be stored in Diabetes Australia SharePoint).
+__A repo containing code for the [INSERT HERE] Power BI environment.__
+__DO NOT Upload .pbix files__, because `.pbix` type files contain the associated data (if providing legacy support, these should be stored in SharePoint).
 
 #### Authors: 
 Who | Role
@@ -9,7 +9,7 @@ Jack MacCormick (JM)    |   Data Analyst (DA)
 Andrew Robinson (AR)    |   Data Engineer/Architect (_External - SKEDA_)
 
 # Reporting Guide for Data Analysts
-This PowerBI delivery article is based on content from Andrew Robinson’s [original knowledge base article](https://diabetesaustralia.sharepoint.com/sites/QLD.ITCData/DataWiki/PowerBI-Processes.aspx).
+This PowerBI delivery article is based on content from Andrew Robinson’s original knowledge base article.
 
 ## 00 Scoping and Requests
 Requests for new reports and interactive dashboards should come in via an IT Service Management portal, _i.e HALO ITSM or JIRA_, which provide workflow intergration, approvals and triage. 
@@ -319,7 +319,7 @@ If this report needs to be run automatically, or via a trigger, it needs to live
 
 A Power Automate flow can be used to trigger, run exports, and handle the distribution of Paginated Reports. This is limited to once per 5mins (_under a PPU licences_). 
     #### Power Automate Steps:
-    1. Create an excel file on SharePoint containing an audience list for the report, with the same name prefix as the dataset/report it will reference, followed by `- Audience`. [Current MH4L files for reference](https://diabetesaustralia.sharepoint.com/:f:/s/QLD.Subsite/MH4L/Ety4UVvFRP1NgkkDh_KcfP4BoDtWEJE-vLyQV7LNoFRZ_w?e=qu8p7V).
+    1. Create an excel file on SharePoint containing an audience list for the report, with the same name prefix as the dataset/report it will reference, followed by `- Audience`.
     0. Create your Power Automate flow. 
         - This flow should be named with the same name as the associated Paginated Report. 
     0. Set up a recurrence || on-action trigger
@@ -343,9 +343,9 @@ __These should be done as in-frequently as possible, and subject to a program-di
 
 While it is possible to supply external partners with raw/sanitised data, it risks that data being taken and mis-represented or shared without our knowledge. To avoid this, raw/sanitised data releases should be avoided unless absolutely required. 
 
-- For example, Diabetes Australia has a number of complex process interactions, caveats and business rules around what counts as _X_ for various purposes, so data summarisations should be done in-house where possible, to ensure the data is presented and interpretted correctly. 
+- For example, YOUR AGENCY has a number of complex process interactions, caveats and business rules around what counts as _X_ for various purposes, so data summarisations should be done in-house where possible, to ensure the data is presented and interpretted correctly. 
 
-__Additionally, Diabetes Australia holds a great deal of personally identifying information (PII) and private/sensitive medical data, so the release method and audience must be carefully considered__, including security in-transit. Even data with identifiers and obvious personal information like names, e-mails and addresses removed can still be identifying, due to the number of demographic factors captured throughout Diabetes Australia datamarts:
+__Additionally, YOUR AGENCY holds a great deal of personally identifying information (PII) and private/sensitive medical data, so the release method and audience must be carefully considered__, including security in-transit. Even data with identifiers and obvious personal information like names, e-mails and addresses removed can still be identifying, due to the number of demographic factors captured throughout YOUR AGENCY datamarts:
 
 > It's important researchers are aware that data that is not obviously sensitive (no names or dates of birth for example) or that has been de-identified, can become sensitive through triangulation or data linkage.
 >
@@ -403,7 +403,7 @@ Use the following template when holding a UAT meeting.
 
 ## 08 Post Creation Steps
 1. __If report is new:__ 
-[Submit a ticket to add the new report to the "list of reports" list in Jira](https://mh4l-ict.atlassian.net/servicedesk/customer/portal/1/group/28/create/93), so clients can select it in "Request changes to a report" tickets. The link to the list of fields this request updates is [here](https://diabetesaustralia.atlassian.net/secure/admin/ConfigureCustomField!default.jspa?customFieldId=10213). 
+Submit a ticket to add the new report to the "list of reports" list in Jira, so clients can select it in "Request changes to a report" tickets. 
 It'll require JIRA admin permissions to access, but it's included here incase anyone asks what they should be updating. 
 
 0. __Provide report users with a change log:__

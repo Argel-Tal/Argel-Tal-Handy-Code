@@ -12,7 +12,7 @@
       },
       {
         "name": "PBIDesktopVersion",
-        "value": "2.124.1805.0 (23.12)"
+        "value": "2.126.927.0 (24.02)"
       },
       {
         "name": "PBI_ProTooling",
@@ -46,10 +46,6 @@
           {
             "name": "PBI_ResultType",
             "value": "Binary"
-          },
-          {
-            "name": "PBI_NavigationStepName",
-            "value": "Navigation"
           }
         ],
         "expression": "#\"Sample File\" meta [IsParameterQuery=true, BinaryIdentifier=#\"Sample File\", Type=\"Binary\", IsParameterQueryRequired=true]",
@@ -128,10 +124,6 @@
         "name": "SourceDir",
         "annotations": [
           {
-            "name": "PBI_NavigationStepName",
-            "value": "Navigation"
-          },
-          {
             "name": "PBI_ResultType",
             "value": "Text"
           }
@@ -197,10 +189,6 @@
           {
             "name": "PBI_ResultType",
             "value": "Table"
-          },
-          {
-            "name": "PBI_NavigationStepName",
-            "value": "Navigation"
           }
         ],
         "columns": [
@@ -575,10 +563,6 @@
           {
             "name": "PBI_ResultType",
             "value": "Table"
-          },
-          {
-            "name": "PBI_NavigationStepName",
-            "value": "Navigation"
           }
         ],
         "columns": [
@@ -841,7 +825,8 @@
             ],
             "expression": [
               "CALCULATE(",
-              "    [TimeSpent] - DISTINCTCOUNT(Pivotted[Week Start - Sort]) *33.75",
+              "    [TimeSpent] - DISTINCTCOUNT(Pivotted[Week Start - Sort]) * 33.75",
+              "    , FILTER(Pivotted, LOWER(Pivotted[Parent Activity]) <> \"lunch\")",
               ")"
             ],
             "lineageTag": "4519addd-bea4-4ece-a857-17d4c97eacf4"

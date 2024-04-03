@@ -135,7 +135,12 @@ NB: Develop reports in the PowerBI desktop client, not on the service portal.
     Have someone check your work to make sure your numbers are as they should be, your calculations are efficent and your code is readable.  Even if it works great, someone else needs to be able to read, understand & debug it. 
 
     Also, this is your oppertunity to learn from others, discover new ways of doing things, and to catch any shortcuts you haven't ammended. 
-    ``` mermaid
+    
+0. __Merging into Production__
+
+    After the pull request is approved and completed, you or the person doing the QA will merge your pull request, and publish the report up to the appropriate PowerBI Workspace.
+
+``` mermaid
     gitGraph:
         commit id:"history"
         commit id:"current state"
@@ -147,10 +152,7 @@ NB: Develop reports in the PowerBI desktop client, not on the service portal.
         checkout main
         merge 034-developmentBranch id:"PR-034 approved"
         commit id:"future merges"
-    ```
-0. __Merging into Production__
-
-    After the pull request is approved and completed, you or the person doing the QA will merge your pull request, and publish the report up to the appropriate PowerBI Workspace.
+```
 
 #### Development workflow diagram
 ``` mermaid

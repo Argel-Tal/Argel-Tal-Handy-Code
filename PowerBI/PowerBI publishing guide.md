@@ -205,7 +205,7 @@ stateDiagram-v2
 ```
 
 #### Git action during development and QA workflows
-![Detailed GIT based workflow](./Git%20PowerBI%20Service%20Design.svg)
+![Detailed GIT based workflow](./ReadMeImages/Git%20PowerBI%20Service%20Design.svg)
 
 
 ## 02 General report creation and conventions:

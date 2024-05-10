@@ -1,0 +1,13 @@
+Source - https://download.microsoft.com/download/4/8/c/48c693c9-6729-43bb-8cd2-3e6bfe4f8f52/Planning%20a%20Power%20BI%20Enterprise%20Deployment%20-%20whitepaper.pdf
+
+Key pages:
+pg21 - App driven model
+pg23 - Common data models
+pg43 - PBI Data flows
+pg96 - gateways
+pg144 - workspace design
+pg150 - Apps for distribution
+pg177 - Sharing w/ externals
+pg181 - Connection w/ Power Automate
+pg235 - Managing access
+pg253 - other resources

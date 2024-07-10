@@ -61,7 +61,7 @@ In order to have your PowerBI data source work through the gateway, your data so
 
 Once you have created your data source in your report using the above details, and you publish the report to the PBI Platform (_online "Service"_), you have to edit the Dataset / "Semantic Model" and enable the system to use the gateway source. Access the PBI Portal and find your data set, edit the data set settings and you should see the option to enable the use of data gateway for your report's data set, as below;
 
-<img src="./ReadMeImages/GatewaySettings.png" width="600">
+<img src="./ReadMeImages/PBI-Service-Settings/GatewaySettings.png" width="600">
 
 If you don't see this option then you either;
 1. Don't have permissions to the data gateway source, or 
@@ -71,11 +71,11 @@ If you are connecting out to a Web source, either connect to an existing named c
 
 Once you have the data gateway/cloud-connection option enabled, you have to map your data sources to the data gateway sources using the dropdown lists.
 
-<img src="./ReadMeImages/GatewayWebConnections.png" width="600">
+<img src="./ReadMeImages/PBI-Service-Settings/GatewayWebConnections.png" width="600">
 
 You should also setup the refresh schedule shown in the image below:
 
-<img src="./ReadMeImages/RefreshSchedule.png" width="400">
+<img src="./ReadMeImages/PBI-Service-Settings/RefreshSchedule.png" width="400">
 
 There is a maximum of 8 times per 24hrs that you can set. The default is every 24hrs. Times closer than 1hr are not recommended as the platform only refreshes within the hour scheduled.
 
@@ -205,7 +205,7 @@ stateDiagram-v2
 ```
 
 #### Git action during development and QA workflows
-![Detailed GIT based workflow](./ReadMeImages/Git%20PowerBI%20Service%20Design.svg)
+![Detailed GIT based workflow](./ReadMeImages/versionControl/Git%20PowerBI%20Service%20Design.svg)
 
 
 ## 02 General report creation and conventions:

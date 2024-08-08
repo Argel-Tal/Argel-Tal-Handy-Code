@@ -1,0 +1,1 @@
+= Table.IsEmpty(Table.Group(#"PREVIOUS STEP", {"UniqueID"}, {{"Count", each Table.RowCount(_), Int64.Type}}))

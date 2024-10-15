@@ -1,0 +1,1 @@
+= Table.AddColumn(#"Added report date", "MaxDate", each [ReportDate] = Date.From(List.Max(#"Added report date"[ReportDate])), type logical)

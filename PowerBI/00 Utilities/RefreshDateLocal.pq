@@ -1,0 +1,1 @@
+= DateTime.Date(DateTimeZone.SwitchZone(DateTimeZone.FixedUtcNow(), 10)) // 10 is Brisbane offset from UTC - this prevents refresh date from being in UTC when done on service

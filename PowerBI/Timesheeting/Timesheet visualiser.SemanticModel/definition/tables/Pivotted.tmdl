@@ -127,6 +127,7 @@ table Pivotted
 
 	partition Pivotted-f4aad6be-2088-4fe3-88f4-ad2d98e59d88 = m
 		mode: import
+		queryGroup: 02-ModelTbs
 		source =
 				let
 				    Source = #"Raw data",

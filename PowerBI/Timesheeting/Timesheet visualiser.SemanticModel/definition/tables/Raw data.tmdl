@@ -83,6 +83,7 @@ table 'Raw data'
 
 	partition 'Raw data-70b164ce-2476-4fa9-9e67-35efb3f79966' = m
 		mode: import
+		queryGroup: 01-Stg
 		source =
 				let
 				    Source = Folder.Files(SourceDir),

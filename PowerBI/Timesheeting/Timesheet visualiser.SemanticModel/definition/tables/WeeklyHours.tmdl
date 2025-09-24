@@ -1,0 +1,26 @@
+table WeeklyHours
+	lineageTag: 7a1fac25-9403-4b4c-8f51-7b46eda67dc9
+
+	column WeeklyHours
+		dataType: double
+		lineageTag: a45d2f0f-7c63-42ab-a2c1-8fa89aa8842c
+		summarizeBy: sum
+		sourceColumn: WeeklyHours
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition WeeklyHours = m
+		mode: import
+		queryGroup: 02-ModelTbs
+		source =
+				let
+				    Source = FortnightlyHours / 2
+				in
+				    Source
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Number
+

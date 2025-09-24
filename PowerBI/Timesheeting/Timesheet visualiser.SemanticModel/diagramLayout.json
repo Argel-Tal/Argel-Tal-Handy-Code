@@ -4,7 +4,7 @@
     {
       "ordinal": 0,
       "scrollPosition": {
-        "x": 0,
+        "x": 147.07142694123078,
         "y": 0
       },
       "nodes": [
@@ -85,10 +85,23 @@
             "width": 234
           },
           "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 1084.4466277222352,
+            "y": 260.74730048766514
+          },
+          "nodeIndex": "WeeklyHours",
+          "nodeLineageTag": "7a1fac25-9403-4b4c-8f51-7b46eda67dc9",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
         }
       ],
       "name": "All tables",
-      "zoomValue": 50.346892102823112,
+      "zoomValue": 79.5531820376998,
       "pinKeyFieldsToTop": false,
       "showExtraHeaderInfo": false,
       "hideKeyFieldsWhenCollapsed": false,

@@ -20,7 +20,7 @@ table 'productive keywords'
 
 	partition 'productive keywords' = m
 		mode: import
-		queryGroup: '00 Params'
+		queryGroup: '00 utilities'
 		source =
 				let
 				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45WSkktU9JRCikqTVWK1QFzU3PyC3JT80qQhUsTUbjFyfkFmXnpKBozgYJlqUWVyIJJpeloXIW0zAo0ITSRlPzkfGR+WWJOZkpiSWZ+HpqqUpAjUSViAQ==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [word = _t, Productive = _t]),

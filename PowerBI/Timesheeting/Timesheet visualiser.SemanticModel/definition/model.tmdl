@@ -7,19 +7,31 @@ model Model
 		legacyRedirects
 		returnErrorValuesAsNull
 
-queryGroup 'Transform File from Records'
+queryGroup '00 utilities\Transform File from Records'
+
+	annotation PBI_QueryGroupOrder = 2
+
+queryGroup '00 utilities\00-00 Params'
 
 	annotation PBI_QueryGroupOrder = 1
 
-queryGroup 'Transform File from Records\Helper Queries'
+queryGroup '00 utilities\Transform File from Records\Helper Queries'
 
 	annotation PBI_QueryGroupOrder = 0
 
-queryGroup '00 Params'
+queryGroup 01-Stg
+
+	annotation PBI_QueryGroupOrder = 3
+
+queryGroup 02-ModelTbs
+
+	annotation PBI_QueryGroupOrder = 4
+
+queryGroup '00 utilities'
 
 	annotation PBI_QueryGroupOrder = 0
 
-annotation PBI_QueryOrder = ["Parameter1","Transform Sample File","Sample File","Transform File","Weekday sort","Raw data","Pivotted","SourceDir","Measures Table","productive keywords"]
+annotation PBI_QueryOrder = ["Parameter1","Transform Sample File","Sample File","Transform File","Weekday sort","Raw data","Pivotted","SourceDir","Measures Table","productive keywords","FortnightlyHours","WeeklyHours"]
 
 annotation __PBI_TimeIntelligenceEnabled = 1
 
@@ -33,6 +45,7 @@ ref table 'Weekday sort'
 ref table 'Measures Table'
 ref table 'productive keywords'
 ref table GroupBy
+ref table WeeklyHours
 
 ref cultureInfo en-US
 

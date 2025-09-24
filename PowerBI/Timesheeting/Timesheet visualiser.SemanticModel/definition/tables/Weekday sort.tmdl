@@ -33,6 +33,7 @@ table 'Weekday sort'
 
 	partition 'Weekday sort-19e0d3d9-2015-481f-8bb0-fb2fb2eb6a3f' = m
 		mode: import
+		queryGroup: 02-ModelTbs
 		source =
 				let
 				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45W8s3PS0msVNJRMgTikKBQV6VYnWilkNLUYoiwEbJweGpKHkzCGEV9RmkRVNwEWdytKBMiaoosGpxYUloEETcDYjdHn2CoRCnUMeYI4VgA", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Day = _t, #"Sort order" = _t, Weekday = _t]),
@@ -42,4 +43,6 @@ table 'Weekday sort'
 				    #"Changed Type1"
 
 	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
 

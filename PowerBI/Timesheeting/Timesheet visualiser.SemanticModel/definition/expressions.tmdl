@@ -1,6 +1,6 @@
 expression Parameter1 = #"Sample File" meta [IsParameterQuery=true, BinaryIdentifier=#"Sample File", Type="Binary", IsParameterQueryRequired=true]
 	lineageTag: fc0fb5e8-10d5-4402-b273-a8d37b8cbe8e
-	queryGroup: 'Transform File from Records\Helper Queries'
+	queryGroup: '00 utilities\Transform File from Records\Helper Queries'
 
 	annotation PBI_ResultType = Binary
 
@@ -14,7 +14,7 @@ expression 'Transform Sample File' =
 		in
 		    #"Promoted Headers"
 	lineageTag: e3bf47cc-a252-41e0-9bba-cdc081e91cca
-	queryGroup: 'Transform File from Records'
+	queryGroup: '00 utilities\Transform File from Records'
 
 	annotation PBI_ResultType = Table
 
@@ -25,7 +25,7 @@ expression 'Sample File' =
 		in
 		    Navigation1
 	lineageTag: bf43b2aa-2b84-494c-9895-5f617f0c7361
-	queryGroup: 'Transform File from Records\Helper Queries'
+	queryGroup: '00 utilities\Transform File from Records\Helper Queries'
 
 	annotation PBI_ResultType = Binary
 
@@ -43,16 +43,24 @@ expression 'Transform File' =
 		    Source
 	mAttributes: [ FunctionQueryBinding = "{""exemplarFormulaName"":""Transform Sample File""}" ]
 	lineageTag: bda78f9e-0c9a-456c-81c3-11ba94f0f766
-	queryGroup: 'Transform File from Records\Helper Queries'
+	queryGroup: '00 utilities\Transform File from Records\Helper Queries'
 
 	annotation PBI_ResultType = Function
 
 /// Where are ya files
-expression SourceDir = "C:\Users\jackm\Documents\_Admin\Jobs\03 CRR\payslips\Records" meta [IsParameterQuery=true, List={"C:\Users\jackm\Documents\_Admin\Jobs\03 CRR\payslips\Records"}, DefaultValue="C:\Users\jackm\Documents\_Admin\Jobs\03 CRR\payslips\Records", Type="Text", IsParameterQueryRequired=true]
+expression SourceDir = "C:\Users\maccormickja\Documents\_timesheets\records" meta [IsParameterQuery=true, List={"C:\Users\jackm\Documents\_Admin\Jobs\03 CRR\payslips\Records"}, DefaultValue="C:\Users\jackm\Documents\_Admin\Jobs\03 CRR\payslips\Records", Type="Text", IsParameterQueryRequired=true]
 	lineageTag: 8da9a7cf-cc9e-4199-9a54-2ee01ca0c87c
-	queryGroup: '00 Params'
+	queryGroup: '00 utilities\00-00 Params'
 
 	annotation PBI_ResultType = Text
 
 	annotation PBI_NavigationStepName = Navigation
+
+expression FortnightlyHours = 72.5 meta [IsParameterQuery=true, Type="Number", IsParameterQueryRequired=true]
+	lineageTag: fc4e5d1d-fb85-4af5-98e9-951f6a46f77d
+	queryGroup: '00 utilities\00-00 Params'
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Number
 

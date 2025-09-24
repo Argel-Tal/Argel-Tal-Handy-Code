@@ -1,0 +1,308 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "name": "596b565de3206fe6c433",
+  "position": {
+    "x": 0,
+    "y": 0,
+    "z": 1000,
+    "height": 196.36363636363635,
+    "width": 267.27272727272725
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Pivotted"
+                    }
+                  },
+                  "Property": "Day"
+                }
+              },
+              "queryRef": "Pivotted.Day",
+              "nativeQueryRef": "Day"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Pivotted"
+                        }
+                      },
+                      "Property": "Time"
+                    }
+                  },
+                  "Function": 3
+                }
+              },
+              "queryRef": "Min(Pivotted.Time)",
+              "nativeQueryRef": "In",
+              "displayName": "In"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Pivotted"
+                        }
+                      },
+                      "Property": "TimeEnd"
+                    }
+                  },
+                  "Function": 4
+                }
+              },
+              "queryRef": "Max(Pivotted.TimeEnd)",
+              "nativeQueryRef": "Out",
+              "displayName": "Out"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Pivotted"
+                    }
+                  },
+                  "Property": "Week Start - Sort"
+                }
+              },
+              "queryRef": "Pivotted.Week Start - Sort",
+              "nativeQueryRef": "Week Start",
+              "displayName": "Week Start"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Pivotted"
+                  }
+                },
+                "Property": "Week Start - Sort"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "grid": [
+        {
+          "properties": {
+            "gridVertical": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "outlineColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 3,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "75.6063448520545D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Pivotted.Week Start - Sort"
+          }
+        }
+      ],
+      "total": [
+        {
+          "properties": {
+            "totals": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Clock in / out times'"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'center'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "parentGroupName": "3ec2c7a0aa85a290f0df",
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "c355927124b4c7e8b2c2",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Pivotted"
+              }
+            },
+            "Property": "TimeEnd"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "442a9e038a3fa2d3d3c0",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Pivotted"
+              }
+            },
+            "Property": "TimeEnd"
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User"
+      },
+      {
+        "name": "577be55d451367f7c9b6",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Pivotted"
+              }
+            },
+            "Property": "Day"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "ff8a7a80bafb30b70fe8",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Pivotted"
+                  }
+                },
+                "Property": "Time"
+              }
+            },
+            "Function": 3
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "271093a270c089bfce92",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Pivotted"
+                  }
+                },
+                "Property": "TimeEnd"
+              }
+            },
+            "Function": 4
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "48086a73e13b7dfe68cd",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Pivotted"
+              }
+            },
+            "Property": "Week Start - Sort"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "name": "c3b59b5d75320fea6361",
+  "position": {
+    "x": 0,
+    "y": 160,
+    "z": 3000,
+    "height": 335.99999999999994,
+    "width": 704.00000000000011,
+    "tabOrder": 10000
+  },
+  "visualGroup": {
+    "displayName": "ribbon chart",
+    "groupMode": "ScaleMode"
+  }
+}

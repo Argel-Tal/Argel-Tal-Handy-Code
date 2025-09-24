@@ -3,8 +3,8 @@
   "name": "ReportSection",
   "displayName": "Landing page",
   "displayOption": "FitToPage",
-  "height": 770,
-  "width": 1800,
+  "height": 720,
+  "width": 1280,
   "pageBinding": {
     "name": "5f5bbb0cc79a5f63dd0b",
     "type": "Default",
@@ -25,27 +25,5 @@
         }
       }
     ]
-  },
-  "visualInteractions": [
-    {
-      "source": "da32b441fccc7776f426",
-      "target": "fec4d8a527db44c15392",
-      "type": "DataFilter"
-    },
-    {
-      "source": "0061ec4281f83265a8e6",
-      "target": "fec4d8a527db44c15392",
-      "type": "DataFilter"
-    },
-    {
-      "source": "da32b441fccc7776f426",
-      "target": "776599e31cf9b333189c",
-      "type": "DataFilter"
-    },
-    {
-      "source": "f665ead77435256937f1",
-      "target": "776599e31cf9b333189c",
-      "type": "DataFilter"
-    }
-  ]
+  }
 }

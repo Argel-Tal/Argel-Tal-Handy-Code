@@ -1,9 +1,8 @@
 {
-  "version": "1.0",
+  "version": "4.0",
   "datasetReference": {
     "byPath": {
-      "path": "../Timesheet visualiser.Dataset"
-    },
-    "byConnection": null
+      "path": "../Timesheet visualiser.SemanticModel"
+    }
   }
 }

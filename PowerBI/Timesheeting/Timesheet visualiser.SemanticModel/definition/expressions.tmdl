@@ -1,0 +1,58 @@
+expression Parameter1 = #"Sample File" meta [IsParameterQuery=true, BinaryIdentifier=#"Sample File", Type="Binary", IsParameterQueryRequired=true]
+	lineageTag: fc0fb5e8-10d5-4402-b273-a8d37b8cbe8e
+	queryGroup: 'Transform File from Records\Helper Queries'
+
+	annotation PBI_ResultType = Binary
+
+	annotation PBI_NavigationStepName = Navigation
+
+expression 'Transform Sample File' =
+		let
+		    Source = Excel.Workbook(Parameter1, null, true),
+		    Sheet1_Sheet = Source{[Item="Sheet1",Kind="Sheet"]}[Data],
+		    #"Promoted Headers" = Table.PromoteHeaders(Sheet1_Sheet, [PromoteAllScalars=true])
+		in
+		    #"Promoted Headers"
+	lineageTag: e3bf47cc-a252-41e0-9bba-cdc081e91cca
+	queryGroup: 'Transform File from Records'
+
+	annotation PBI_ResultType = Table
+
+expression 'Sample File' =
+		let
+		    Source = Folder.Files(SourceDir),
+		    Navigation1 = Source{0}[Content]
+		in
+		    Navigation1
+	lineageTag: bf43b2aa-2b84-494c-9895-5f617f0c7361
+	queryGroup: 'Transform File from Records\Helper Queries'
+
+	annotation PBI_ResultType = Binary
+
+	annotation PBI_NavigationStepName = Navigation
+
+expression 'Transform File' =
+		let
+		    Source = (Parameter1 as binary) => let
+		    Source = Excel.Workbook(Parameter1, null, true),
+		    Sheet1_Sheet = Source{[Item="Sheet1",Kind="Sheet"]}[Data],
+		    #"Promoted Headers" = Table.PromoteHeaders(Sheet1_Sheet, [PromoteAllScalars=true])
+		in
+		    #"Promoted Headers"
+		in
+		    Source
+	mAttributes: [ FunctionQueryBinding = "{""exemplarFormulaName"":""Transform Sample File""}" ]
+	lineageTag: bda78f9e-0c9a-456c-81c3-11ba94f0f766
+	queryGroup: 'Transform File from Records\Helper Queries'
+
+	annotation PBI_ResultType = Function
+
+/// Where are ya files
+expression SourceDir = "C:\Users\jackm\Documents\_Admin\Jobs\03 CRR\payslips\Records" meta [IsParameterQuery=true, List={"C:\Users\jackm\Documents\_Admin\Jobs\03 CRR\payslips\Records"}, DefaultValue="C:\Users\jackm\Documents\_Admin\Jobs\03 CRR\payslips\Records", Type="Text", IsParameterQueryRequired=true]
+	lineageTag: 8da9a7cf-cc9e-4199-9a54-2ee01ca0c87c
+	queryGroup: '00 Params'
+
+	annotation PBI_ResultType = Text
+
+	annotation PBI_NavigationStepName = Navigation
+

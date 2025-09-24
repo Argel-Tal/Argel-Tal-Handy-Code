@@ -1,0 +1,154 @@
+table Pivotted
+	lineageTag: d6151326-a015-4539-b0e5-54347087b791
+
+	column 'Week Start'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: c4410ce3-f6a3-4b88-b5ea-2afa2912bf05
+		summarizeBy: none
+		sourceColumn: Week Start
+
+		variation Variation
+			isDefault
+			relationship: 42796f81-7da4-434b-af09-0ed61c9c344b
+			defaultHierarchy: LocalDateTable_b1b8f686-946b-4700-b7d7-a0032341467f.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Time
+		dataType: dateTime
+		formatString: hh:nn
+		lineageTag: 29beaaa9-4f7f-430a-bcac-05e615261e7e
+		summarizeBy: none
+		sourceColumn: Time
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column TimeEnd = Pivotted[Time] + TIME(0,15,0)
+		formatString: hh:nn
+		lineageTag: a5438894-ac1e-4cf3-a8c6-f9b69cc5b14c
+		summarizeBy: none
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'Day Sort' = RELATED('Weekday sort'[Sort order])
+		formatString: 0
+		lineageTag: 30f9018f-dcba-4f2d-9f51-d8af076718ee
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parent Activity'
+		dataType: string
+		isHidden
+		lineageTag: d42cd86b-9bef-4c7f-8c34-f18cd20cae7a
+		summarizeBy: none
+		sourceColumn: Parent Activity
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Child 1 Activity'
+		dataType: string
+		isHidden
+		lineageTag: 831f19e4-f26e-4cb5-9331-4dfdb2a24aba
+		summarizeBy: none
+		sourceColumn: Child 1 Activity
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Child 2 Activity'
+		dataType: string
+		isHidden
+		lineageTag: 9d0635db-3a1e-44d5-936a-8d4eea6b3176
+		summarizeBy: none
+		sourceColumn: Child 2 Activity
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Day
+		dataType: string
+		lineageTag: f39e39c3-679f-44ea-845e-3e5679e9ba90
+		summarizeBy: none
+		sourceColumn: Day
+		sortByColumn: 'Day Sort'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsWork
+		dataType: string
+		lineageTag: a08ad55d-dd63-4b9d-9442-bf0f260e4fde
+		summarizeBy: none
+		sourceColumn: IsWork
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Week Start - Sort'
+		dataType: string
+		lineageTag: 1ea43976-ffbd-412a-9ab8-463d6ea45c1d
+		summarizeBy: none
+		sourceColumn: Week Start - Sort
+
+		annotation SummarizationSetBy = Automatic
+
+	hierarchy 'Activity Hierarchy'
+		lineageTag: 01c68cda-5c17-4172-aad0-956253005050
+
+		level 'Parent Activity'
+			lineageTag: 26680d27-cd7f-40cb-b2b3-493a8a30752a
+			column: 'Parent Activity'
+
+		level 'Child 1 Activity'
+			lineageTag: 24f450d6-bd5e-4645-a866-886c68b9eea5
+			column: 'Child 1 Activity'
+
+		level 'Child 2 Activity'
+			lineageTag: b3431586-cf70-4bfe-aee8-25d81d54f46b
+			column: 'Child 2 Activity'
+
+	partition Pivotted-f4aad6be-2088-4fe3-88f4-ad2d98e59d88 = m
+		mode: import
+		source =
+				let
+				    Source = #"Raw data",
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Source.Name", type text}, {"Time", type time}, {"Monday", type text}, {"Tuesday", type text}, {"Wednesday", type text}, {"Thursday", type any}, {"Friday", type any}, {"Saturday", type any}, {"Sunday", type any}, {"Notes", type any}}),
+				    #"Rename - weekday start" = Table.RenameColumns(#"Changed Type",{{"Source.Name", "Week Start"}}),
+				    #"Extracted Text Before Delimiter" = Table.TransformColumns(#"Rename - weekday start", {{"Week Start", each Text.BeforeDelimiter(_, "."), type text}}),
+				    #"Duplicated - weekday start" = Table.DuplicateColumn(#"Extracted Text Before Delimiter", "Week Start", "Week Start - Sort"),
+				    #"Reordered - weekday sort to front" = Table.ReorderColumns(#"Duplicated - weekday start",{"Week Start", "Week Start - Sort", "Time", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday", "Notes"}),
+				    #"Changed Type - weekday to date" = Table.TransformColumnTypes(#"Reordered - weekday sort to front",{{"Week Start", type date}}),
+				    #"Removed - notes" = Table.RemoveColumns(#"Changed Type - weekday to date",{"Notes"}),
+				    #"Unpivoted Other Columns" = Table.UnpivotOtherColumns(#"Removed - notes", {"Week Start", "Time", "Week Start - Sort"}, "Day", "Parent Activity"),
+				    #"Lowercased - unpivoted" = Table.TransformColumns(#"Unpivoted Other Columns",{{"Parent Activity", Text.Lower, type text}}),
+				    #"Split Column by Delimiter" = Table.SplitColumn(#"Lowercased - unpivoted", "Parent Activity", Splitter.SplitTextByDelimiter(" - ", QuoteStyle.Csv), {"Parent Activity", "Child 1 Activity", "Child 2 Activity"}),
+				    #"Changed - splits to text" = Table.TransformColumnTypes(#"Split Column by Delimiter",{{"Parent Activity", type text}, {"Child 1 Activity", type text}, {"Child 2 Activity", type text}}),
+				    #"Trimmed - splits" = Table.TransformColumns(#"Changed - splits to text",{{"Parent Activity", Text.Trim, type text}, {"Child 1 Activity", Text.Trim, type text}, {"Child 2 Activity", Text.Trim, type text}}),
+				    #"Cleaned - splits" = Table.TransformColumns(#"Trimmed - splits",{{"Parent Activity", Text.Clean, type text}, {"Child 1 Activity", Text.Clean, type text}, {"Child 2 Activity", Text.Clean, type text}}),
+				    #"Added iswork" = Table.AddColumn(#"Cleaned - splits", "IsWork", each if ([Parent Activity] = "lunch") then "Lunch" else "Work"),
+				    #"Replaced Value" = Table.ReplaceValue(#"Added iswork","practical completion","wip-280",Replacer.ReplaceText,{"Parent Activity"})
+				in
+				    #"Replaced Value"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

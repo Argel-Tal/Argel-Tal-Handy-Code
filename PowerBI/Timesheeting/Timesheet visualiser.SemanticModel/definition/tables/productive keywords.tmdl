@@ -1,0 +1,34 @@
+table 'productive keywords'
+	lineageTag: 6fadf5fe-7ba9-4d4f-9d5b-7ca12019dab5
+
+	column word
+		dataType: string
+		lineageTag: a472b9f3-4f76-478b-bf1f-ffbd073fbf49
+		summarizeBy: none
+		sourceColumn: word
+
+		annotation SummarizationSetBy = Automatic
+
+	column Productive
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: c3c59076-3e19-4470-b709-51d5e99c8256
+		summarizeBy: none
+		sourceColumn: Productive
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'productive keywords' = m
+		mode: import
+		queryGroup: '00 Params'
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45WSkktU9JRCikqTVWK1QFzU3PyC3JT80qQhUsTUbjFyfkFmXnpKBozgYJlqUWVyIJJpeloXIW0zAo0ITSRlPzkfGR+WWJOZkpiSWZ+HpqqUpAjUSViAQ==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [word = _t, Productive = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"word", type text}, {"Productive", type logical}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

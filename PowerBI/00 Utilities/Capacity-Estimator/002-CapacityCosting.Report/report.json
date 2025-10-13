@@ -1,0 +1,182 @@
+{
+  "config": "{\"version\":\"5.66\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":{\"visual\":\"1.8.95\",\"report\":\"2.0.95\",\"page\":\"1.3.95\"},\"type\":2},\"customTheme\":{\"name\":\"AccessibleOrchid\",\"version\":{\"visual\":\"2.1.0\",\"report\":\"2.1.0\",\"page\":\"2.0.0\"},\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"linguisticSchemaSyncVersion\":2,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true,\"useEnhancedTooltips\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}],\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "AccessibleOrchid",
+            "path": "BuiltInThemes/AccessibleOrchid.json",
+            "type": 201
+          },
+          {
+            "name": "CY24SU10",
+            "path": "BaseThemes/CY24SU10.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{\"objects\":{\"background\":[{\"properties\":{\"image\":{\"image\":{\"name\":{\"expr\":{\"Literal\":{\"Value\":\"''\"}}},\"url\":{\"expr\":{\"Literal\":{\"Value\":\"''\"}}}}},\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}}}}]}}",
+      "displayName": "Landing",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 1080.00,
+      "name": "b026d2dd5e19c51406d4",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"0474bda079113efec05e\",\"layouts\":[{\"id\":0,\"position\":{\"height\":133.33333333333331,\"width\":241.42358078602618,\"x\":0,\"y\":0,\"z\":0,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"MeasuresTb.Capacity Cost\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"MeasuresTb\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Capacity Cost\"},\"Name\":\"MeasuresTb.Capacity Cost\",\"NativeReferenceName\":\"Capacity Cost\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Capacity Cost\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"labels\":[{\"properties\":{\"labelDisplayUnits\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}},\"labelPrecision\":{\"expr\":{\"Literal\":{\"Value\":\"3L\"}}}}}],\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Monthly Capacity cost'\"}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}}}}],\"padding\":[{\"properties\":{\"top\":{\"expr\":{\"Literal\":{\"Value\":\"5D\"}}}}}],\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}},\"parentGroupName\":\"e884e95a4fa76170d099\"}",
+          "filters": "[]",
+          "height": 133.33,
+          "width": 241.42,
+          "x": 0.00,
+          "y": 0.00,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"27741b0c38dc99df799f\",\"layouts\":[{\"id\":0,\"position\":{\"height\":133.33333333333331,\"width\":238.2882096069869,\"x\":479.7117903930132,\"y\":0,\"z\":2000,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"MeasuresTb.Breakeven\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"MeasuresTb\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Breakeven\"},\"Name\":\"MeasuresTb.Breakeven\",\"NativeReferenceName\":\"Breakeven\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Breakeven\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"labels\":[{\"properties\":{\"labelDisplayUnits\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}},\"labelPrecision\":{\"expr\":{\"Literal\":{\"Value\":\"3L\"}}}}}],\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Licensing breakeven point'\"}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}}}}],\"padding\":[{\"properties\":{\"top\":{\"expr\":{\"Literal\":{\"Value\":\"5D\"}}}}}],\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}},\"parentGroupName\":\"e884e95a4fa76170d099\"}",
+          "filters": "[]",
+          "height": 133.33,
+          "width": 238.29,
+          "x": 479.71,
+          "y": 0.00,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"4a26d0ebabf4ad35e8c3\",\"layouts\":[{\"id\":0,\"position\":{\"x\":568.5714285714286,\"y\":105.71428571428572,\"z\":6000,\"width\":1247.142857142857,\"height\":157.14285714285714,\"tabOrder\":6000}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Key decision: Do users without a license need access? Capacities below F64 require a PowerBI Pro license when accessing content.\",\"textStyle\":{\"fontWeight\":\"bold\",\"fontSize\":\"14pt\"}}]},{\"textRuns\":[{\"value\":\"\"}]},{\"textRuns\":[{\"value\":\"Some employees have this license through their Microsoft E5 licensing, but other organisations may not possess PowerBI Pro licenses.\",\"textStyle\":{\"fontSize\":\"12pt\"}}]},{\"textRuns\":[{\"value\":\"\"}]},{\"textRuns\":[{\"value\":\"Depending on the expected number of non-licensed users, you may wish to purchase an F64+ capacity to ensure they can access content. Alternatively licenses can be assigned by the home organisation (BYO), or assigned by DOJ to guest users if adequate usage tracking is deployed to ensure users are still employed & are making use of the license.\",\"textStyle\":{\"fontSize\":\"12pt\"}}]}]}}]},\"vcObjects\":{\"background\":[{\"properties\":{\"color\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":-0.1}}}}}}}]}}}",
+          "filters": "[]",
+          "height": 157.14,
+          "width": 1247.14,
+          "x": 568.57,
+          "y": 105.71,
+          "z": 6000.00
+        },
+        {
+          "config": "{\"name\":\"5348a9ccfbd3c6fed24d\",\"layouts\":[{\"id\":0,\"position\":{\"x\":697.5,\"y\":33.75,\"z\":10000,\"width\":525,\"height\":51.25,\"tabOrder\":8000}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Fabric Capacity Assessment Tool\",\"textStyle\":{\"fontWeight\":\"bold\",\"fontSize\":\"20pt\",\"color\":\"#063652\"}}],\"horizontalTextAlignment\":\"center\"}]}}]},\"vcObjects\":{\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 51.25,
+          "width": 525.00,
+          "x": 697.50,
+          "y": 33.75,
+          "z": 10000.00
+        },
+        {
+          "config": "{\"name\":\"593f271e24884537aaf7\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1608.75,\"y\":308.75,\"z\":11000,\"width\":210,\"height\":43.75,\"tabOrder\":10000}}],\"singleVisual\":{\"visualType\":\"actionButton\",\"drillFilterOtherVisuals\":true,\"objects\":{\"icon\":[{\"properties\":{\"shapeType\":{\"expr\":{\"Literal\":{\"Value\":\"'information'\"}}},\"lineColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":2,\"Percent\":0}}}}}},\"selector\":{\"id\":\"default\"}}],\"text\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'About PowerBI licensing'\"}}},\"horizontalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'right'\"}}},\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}}},\"selector\":{\"id\":\"default\"}}]},\"vcObjects\":{\"visualLink\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"type\":{\"expr\":{\"Literal\":{\"Value\":\"'WebUrl'\"}}},\"webUrl\":{\"expr\":{\"Literal\":{\"Value\":\"'https://www.microsoft.com/en-au/power-platform/products/power-bi/pricing#tabs-pill-bar-oca31b12_tab0'\"}}},\"tooltip\":{\"expr\":{\"Literal\":{\"Value\":\"'Go to Microsoft site'\"}}}}}],\"padding\":[{\"properties\":{\"top\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
+          "filters": "[]",
+          "height": 43.75,
+          "width": 210.00,
+          "x": 1608.75,
+          "y": 308.75,
+          "z": 11000.00
+        },
+        {
+          "config": "{\"name\":\"60d55193a3fabfdbd026\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1310,\"y\":746.6666666666667,\"z\":5000,\"width\":363.33333333333337,\"height\":93.33333333333334,\"tabOrder\":5000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"Up time.Up time\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"u\",\"Entity\":\"Up time\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"u\"}},\"Property\":\"Up time\"},\"Name\":\"Up time.Up time\",\"NativeReferenceName\":\"Up time\"}]},\"syncGroup\":{\"groupName\":\"Up time\",\"fieldChanges\":true,\"filterChanges\":true},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"numericStart\":{\"expr\":{\"Literal\":{\"Value\":\"0.21000000000000005D\"}}}}}],\"general\":[{\"properties\":{\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"u\",\"Entity\":\"Up time\",\"Type\":0}],\"Where\":[{\"Condition\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"u\"}},\"Property\":\"Up time\"}},\"Right\":{\"Literal\":{\"Value\":\"0.21000000000000005D\"}}}}}]}}}}],\"header\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"numericInputStyle\":[{\"properties\":{\"textSize\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Capacity Uptime'\"}}},\"background\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"null\"}}}}}}}],\"background\":[{\"properties\":{\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 93.33,
+          "width": 363.33,
+          "x": 1310.00,
+          "y": 746.67,
+          "z": 5000.00
+        },
+        {
+          "config": "{\"name\":\"6888d2f5baff61aec6bd\",\"layouts\":[{\"id\":0,\"position\":{\"x\":38.57142857142858,\"y\":105.71428571428572,\"z\":0,\"width\":507.14285714285717,\"height\":802.8571428571429,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Before requesting a new Fabric Capacity, please complete the following:\",\"textStyle\":{\"fontWeight\":\"bold\",\"fontSize\":\"16pt\"}}]},{\"textRuns\":[{\"value\":\"\"}]},{\"textRuns\":[{\"value\":\"1. Identify the following user profiles:\",\"textStyle\":{\"fontWeight\":\"bold\",\"fontSize\":\"12pt\"}}]},{\"textRuns\":[{\"value\":\"\"}]},{\"textRuns\":[{\"value\":\"- Capacity Owners:\",\"textStyle\":{\"fontWeight\":\"bold\"}},{\"value\":\" people who are ultimately accountable for the content in the capacity, it's accuracy, availability, access control..., and who are approving the ongoing funding\"}]},{\"textRuns\":[{\"value\":\"\"}]},{\"textRuns\":[{\"value\":\"- Capacity Admins:\",\"textStyle\":{\"fontWeight\":\"bold\"}},{\"value\":\" people who will be responsible for technical set up & maintenance, via Super User accounts\"}]},{\"textRuns\":[{\"value\":\"\"}]},{\"textRuns\":[{\"value\":\"- \",\"textStyle\":{\"fontStyle\":\"italic\"}},{\"value\":\"Optional: Capacity Contributors:\",\"textStyle\":{\"fontWeight\":\"bold\",\"fontStyle\":\"italic\"}},{\"value\":\" people who will be able to assign VNET gateways & content (theirs or other's) to run using capacity resources, but cannot edit core settings.\"}]},{\"textRuns\":[{\"value\":\"\"}]},{\"textRuns\":[{\"value\":\"2. Outline who needs to know when the Capacity is running out of resources.\",\"textStyle\":{\"fontWeight\":\"bold\",\"fontSize\":\"12pt\"}}]},{\"textRuns\":[{\"value\":\"\"}]},{\"textRuns\":[{\"value\":\"This may include some/all of the personas listed above, and others.\"}]},{\"textRuns\":[{\"value\":\"These people will receive email notifications from Microsoft when the capacity's resources are running low.\"}]},{\"textRuns\":[{\"value\":\"\"}]},{\"textRuns\":[{\"value\":\"\"}]},{\"textRuns\":[{\"value\":\"3. Identify any existing Workspaces & content that you need to assign to the new capacity\",\"textStyle\":{\"fontWeight\":\"bold\",\"fontSize\":\"12pt\"}},{\"value\":\".\",\"textStyle\":{\"fontSize\":\"12pt\"}}]},{\"textRuns\":[{\"value\":\"\"}]},{\"textRuns\":[{\"value\":\"As part of the migration, governance controls & best practice upgrades may be required, i.e. naming conventions for your Workspaces & connectors, security groups to manage access to objects & containers...\"}]},{\"textRuns\":[{\"value\":\"\"}]},{\"textRuns\":[{\"value\":\"\"}]},{\"textRuns\":[{\"value\":\"4. Identify any existing VNET Gateways and associated Connectors\",\"textStyle\":{\"fontWeight\":\"bold\",\"fontSize\":\"12pt\"}}]},{\"textRuns\":[{\"value\":\"\"}]},{\"textRuns\":[{\"value\":\"Any VNET Gateways used in existing solutions which being migrated will need to be recreated to run on the new capacity's compute engine.\"}]},{\"textRuns\":[{\"value\":\"\"}]}]}}]},\"vcObjects\":{\"background\":[{\"properties\":{\"color\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":-0.1}}}}}}}]}}}",
+          "filters": "[]",
+          "height": 802.86,
+          "width": 507.14,
+          "x": 38.57,
+          "y": 105.71,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"88d74a99b2f9ba6c0f69\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1311.25,\"y\":385,\"z\":7000,\"width\":570,\"height\":245,\"tabOrder\":7000}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Key decision: PAYG or Reserved? Reserved Capacities are provided at a discounted rate.\",\"textStyle\":{\"fontWeight\":\"bold\",\"fontSize\":\"14pt\"}}]},{\"textRuns\":[{\"value\":\"Reserved capacities are offered at a 41% discount, but they're always on, so you're always paying for them.\",\"textStyle\":{\"fontSize\":\"16px\"}}]},{\"textRuns\":[{\"value\":\"\"}]},{\"textRuns\":[{\"value\":\"Pay As You Go (PAYG) you only pay when the capacity is online.\",\"textStyle\":{\"fontSize\":\"12pt\"}}]},{\"textRuns\":[{\"value\":\"This allows you to turn it off when no activity is scheduled / expected. \",\"textStyle\":{\"fontSize\":\"12pt\"}}]},{\"textRuns\":[{\"value\":\"Note \",\"textStyle\":{\"fontSize\":\"12pt\"}},{\"value\":\"you're paying for the availability of those resources, not\",\"textStyle\":{\"fontFamily\":\"inherit\",\"fontSize\":\"12pt\"}},{\"value\":\" for what resources you use. \",\"textStyle\":{\"fontSize\":\"16px\"}}]},{\"textRuns\":[{\"value\":\"\"}]},{\"textRuns\":[{\"value\":\"The \\\"\",\"textStyle\":{\"fontSize\":\"16px\"}},{\"value\":\"Capacity Uptime\",\"textStyle\":{\"fontStyle\":\"italic\",\"fontSize\":\"16px\"}},{\"value\":\"\\\" slicer allows you to model different activity patterns\",\"textStyle\":{\"fontSize\":\"16px\"}}]}]}}]},\"vcObjects\":{\"background\":[{\"properties\":{\"color\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":-0.1}}}}},\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 245.00,
+          "width": 570.00,
+          "x": 1311.25,
+          "y": 385.00,
+          "z": 7000.00
+        },
+        {
+          "config": "{\"name\":\"8cc7ed8968395a650adf\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1310,\"y\":646.6666666666667,\"z\":4000,\"width\":363.33333333333337,\"height\":86.66666666666667,\"tabOrder\":4000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"SKU prices.Mode\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"SKU prices\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Mode\"},\"Name\":\"SKU prices.Mode\",\"NativeReferenceName\":\"Mode\"}]},\"syncGroup\":{\"groupName\":\"Mode\",\"fieldChanges\":true,\"filterChanges\":true},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Basic'\"}}}}}],\"general\":[{\"properties\":{\"orientation\":{\"expr\":{\"Literal\":{\"Value\":\"1D\"}}},\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"SKU prices\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Mode\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Pay-as-you-go'\"}}]]}}}]}}}}],\"header\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"items\":[{\"properties\":{\"textSize\":{\"expr\":{\"Literal\":{\"Value\":\"12D\"}}},\"bold\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"padding\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}}}}],\"selection\":[{\"properties\":{\"strictSingleSelect\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Capacity Mode'\"}}}}}],\"padding\":[{\"properties\":{\"left\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}},\"right\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}},\"bottom\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}}}}],\"background\":[{\"properties\":{}}]}}}",
+          "filters": "[]",
+          "height": 86.67,
+          "width": 363.33,
+          "x": 1310.00,
+          "y": 646.67,
+          "z": 4000.00
+        },
+        {
+          "config": "{\"name\":\"a6dd109cece8ac904d85\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1308.75,\"y\":276.25,\"z\":1000,\"width\":300,\"height\":108.75,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"License Prices.License Type\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"l\",\"Entity\":\"License Prices\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l\"}},\"Property\":\"License Type\"},\"Name\":\"License Prices.License Type\",\"NativeReferenceName\":\"License Type\"}]},\"syncGroup\":{\"groupName\":\"License Type\",\"fieldChanges\":true,\"filterChanges\":true},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Basic'\"}}}}}],\"general\":[{\"properties\":{\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"l\",\"Entity\":\"License Prices\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l\"}},\"Property\":\"License Type\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'Power BI Pro'\"}}]]}}}]}}}}],\"header\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"selection\":[{\"properties\":{\"strictSingleSelect\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Additional User License type'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 108.75,
+          "width": 300.00,
+          "x": 1308.75,
+          "y": 276.25,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"c6eb5dc18c110635f045\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1673.3333333333335,\"y\":646.6666666666667,\"z\":3000,\"width\":208.33333333333334,\"height\":261.6666666666667,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"SKU prices API.SKU\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s1\",\"Entity\":\"SKU prices\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s1\"}},\"Property\":\"SKU\"},\"Name\":\"SKU prices API.SKU\",\"NativeReferenceName\":\"SKU1\"}]},\"syncGroup\":{\"groupName\":\"SKU\",\"fieldChanges\":true,\"filterChanges\":true},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Basic'\"}}}}}],\"general\":[{\"properties\":{\"selfFilterEnabled\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"SKU prices\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"SKU\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'F16'\"}}]]}}}]}}}}],\"selection\":[{\"properties\":{\"strictSingleSelect\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"header\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"items\":[{\"properties\":{\"textSize\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Capacity Size'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 261.67,
+          "width": 208.33,
+          "x": 1673.33,
+          "y": 646.67,
+          "z": 3000.00
+        },
+        {
+          "config": "{\"name\":\"c7863843c3b6b69cc2a0\",\"layouts\":[{\"id\":0,\"position\":{\"x\":569.3333333333334,\"y\":276.3333333333334,\"z\":2000,\"width\":721.6666666666667,\"height\":631.6666666666667,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Y\":[{\"queryRef\":\"MeasuresTb.TotalCost\"}],\"Category\":[{\"queryRef\":\"User license range.Number Licenses\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"MeasuresTb\",\"Type\":0},{\"Name\":\"u\",\"Entity\":\"User license range\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"u\"}},\"Property\":\"Number Licenses\"},\"Name\":\"User license range.Number Licenses\",\"NativeReferenceName\":\"Sum of Number Licenses\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"TotalCost\"},\"Name\":\"MeasuresTb.TotalCost\",\"NativeReferenceName\":\"TotalCost\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"TotalCost\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"y1AxisReferenceLine\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"displayName\":{\"expr\":{\"Literal\":{\"Value\":\"'F64 Reservation'\"}}},\"value\":{\"expr\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"MeasuresTb\"}},\"Property\":\"F64\"}}},\"dataLabelShow\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"dataLabelHorizontalPosition\":{\"expr\":{\"Literal\":{\"Value\":\"'right'\"}}},\"dataLabelText\":{\"expr\":{\"Literal\":{\"Value\":\"'ValueAndName'\"}}},\"lineColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":-0.5}}}}},\"dataLabelColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":-0.5}}}}},\"dataLabelDisplayUnits\":{\"expr\":{\"Literal\":{\"Value\":\"1D\"}}},\"dataLabelVerticalPosition\":{\"expr\":{\"Literal\":{\"Value\":\"'under'\"}}}},\"selector\":{\"id\":\"1\"}},{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"displayName\":{\"expr\":{\"Literal\":{\"Value\":\"'Capacity Cost'\"}}},\"value\":{\"expr\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"MeasuresTb\"}},\"Property\":\"Capacity Cost\"}}},\"lineColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":3,\"Percent\":-0.25}}}}},\"dataLabelShow\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"dataLabelText\":{\"expr\":{\"Literal\":{\"Value\":\"'ValueAndName'\"}}},\"dataLabelHorizontalPosition\":{\"expr\":{\"Literal\":{\"Value\":\"'right'\"}}}},\"selector\":{\"id\":\"2\"}},{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"displayName\":{\"expr\":{\"Literal\":{\"Value\":\"'Reserved Cost'\"}}},\"value\":{\"expr\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"MeasuresTb\"}},\"Property\":\"ReservedCost\"}}},\"lineColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":4,\"Percent\":0}}}}},\"dataLabelShow\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"dataLabelHorizontalPosition\":{\"expr\":{\"Literal\":{\"Value\":\"'right'\"}}},\"dataLabelText\":{\"expr\":{\"Literal\":{\"Value\":\"'ValueAndName'\"}}},\"dataLabelColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":4,\"Percent\":0}}}}}},\"selector\":{\"id\":\"3\"}}],\"valueAxis\":[{\"properties\":{\"start\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}},\"showAxisTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"labelDisplayUnits\":{\"expr\":{\"Literal\":{\"Value\":\"1D\"}}}}}],\"xAxisReferenceLine\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"displayName\":{\"expr\":{\"Literal\":{\"Value\":\"'Break even (F64)'\"}}},\"value\":{\"expr\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"MeasuresTb\"}},\"Property\":\"Breakeven\"}}},\"lineColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":-0.5}}}}},\"dataLabelShow\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"shadeRegion\":{\"expr\":{\"Literal\":{\"Value\":\"'none'\"}}},\"dataLabelText\":{\"expr\":{\"Literal\":{\"Value\":\"'ValueAndName'\"}}},\"dataLabelHorizontalPosition\":{\"expr\":{\"Literal\":{\"Value\":\"'left'\"}}},\"dataLabelVerticalPosition\":{\"expr\":{\"Literal\":{\"Value\":\"'above'\"}}},\"dataLabelDisplayUnits\":{\"expr\":{\"Literal\":{\"Value\":\"1D\"}}},\"dataLabelDecimalPoints\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}},\"dataLabelColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":-0.5}}}}}},\"selector\":{\"id\":\"1\"}}],\"categoryAxis\":[{\"properties\":{\"start\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}},\"titleText\":{\"expr\":{\"Literal\":{\"Value\":\"'Additional Pro Licenses required'\"}}}}}],\"zoom\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Capacity & Licensing cost (monthly)'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 631.67,
+          "width": 721.67,
+          "x": 569.33,
+          "y": 276.33,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"cc587324bd76cebdbeff\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1388.3333333333335,\"y\":853.3333333333334,\"z\":12000,\"width\":208.33333333333334,\"height\":41.66666666666667,\"tabOrder\":11000}}],\"singleVisual\":{\"visualType\":\"actionButton\",\"drillFilterOtherVisuals\":true,\"objects\":{\"icon\":[{\"properties\":{\"shapeType\":{\"expr\":{\"Literal\":{\"Value\":\"'information'\"}}},\"lineColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":2,\"Percent\":0}}}}},\"lineWeight\":{\"expr\":{\"Literal\":{\"Value\":\"3L\"}}},\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'middle'\"}}},\"horizontalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'left'\"}}}},\"selector\":{\"id\":\"default\"}}],\"text\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'About Fabric Capacities'\"}}},\"horizontalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'right'\"}}},\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}}},\"selector\":{\"id\":\"default\"}}]},\"vcObjects\":{\"visualLink\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"type\":{\"expr\":{\"Literal\":{\"Value\":\"'WebUrl'\"}}},\"webUrl\":{\"expr\":{\"Literal\":{\"Value\":\"'https://azure.microsoft.com/en-us/pricing/details/microsoft-fabric/'\"}}},\"tooltip\":{\"expr\":{\"Literal\":{\"Value\":\"'Go to Microsoft site'\"}}}}}]}},\"howCreated\":\"InsertVisualButton\"}",
+          "filters": "[]",
+          "height": 41.67,
+          "width": 208.33,
+          "x": 1388.33,
+          "y": 853.33,
+          "z": 12000.00
+        },
+        {
+          "config": "{\"name\":\"e19f0f2cc70e8902d644\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1311.6666666666667,\"y\":933.3333333333334,\"z\":8000,\"width\":321.6666666666667,\"height\":133.33333333333334,\"tabOrder\":9000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"MeasuresTb.PAYG saving\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"MeasuresTb\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"PAYG saving\"},\"Name\":\"MeasuresTb.PAYG saving\",\"NativeReferenceName\":\"PAYG saving\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"PAYG saving\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"labels\":[{\"properties\":{\"labelDisplayUnits\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}},\"labelPrecision\":{\"expr\":{\"Literal\":{\"Value\":\"3L\"}}},\"color\":{\"solid\":{\"color\":{\"expr\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"MeasuresTb\"}},\"Property\":\"SavingColour\"}}}}}}}],\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'PAYG price vs Reservation'\"}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}}}}],\"padding\":[{\"properties\":{\"top\":{\"expr\":{\"Literal\":{\"Value\":\"5D\"}}}}}],\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 133.33,
+          "width": 321.67,
+          "x": 1311.67,
+          "y": 933.33,
+          "z": 8000.00
+        },
+        {
+          "config": "{\"name\":\"e7f710a404e92b5c1ec4\",\"layouts\":[{\"id\":0,\"position\":{\"height\":133.33333333333331,\"width\":238.2882096069869,\"x\":241.42358078602618,\"y\":0,\"z\":1000,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"CountNonNull(SKU prices.Capacity unit (CU))\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"s\",\"Entity\":\"SKU prices\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Capacity unit (CU)\"}},\"Function\":0},\"Name\":\"CountNonNull(SKU prices.Capacity unit (CU))\",\"NativeReferenceName\":\"Sum of Capacity unit (CU)\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"s\"}},\"Property\":\"Capacity unit (CU)\"}},\"Function\":0}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"labels\":[{\"properties\":{\"labelDisplayUnits\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}},\"labelPrecision\":{\"expr\":{\"Literal\":{\"Value\":\"3L\"}}}}}],\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Available parallel CU/s'\"}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}}}}],\"padding\":[{\"properties\":{\"top\":{\"expr\":{\"Literal\":{\"Value\":\"5D\"}}}}}],\"background\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}},\"parentGroupName\":\"e884e95a4fa76170d099\"}",
+          "filters": "[]",
+          "height": 133.33,
+          "width": 238.29,
+          "x": 241.42,
+          "y": 0.00,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"e884e95a4fa76170d099\",\"layouts\":[{\"id\":0,\"position\":{\"x\":574,\"y\":934,\"z\":9000,\"width\":718,\"height\":132,\"tabOrder\":12000}}],\"singleVisualGroup\":{\"displayName\":\"Group 1\",\"groupMode\":0}}",
+          "height": 132.00,
+          "width": 718.00,
+          "x": 574.00,
+          "y": 934.00,
+          "z": 9000.00
+        }
+      ],
+      "width": 1920.00
+    }
+  ],
+  "theme": "AccessibleOrchid"
+}

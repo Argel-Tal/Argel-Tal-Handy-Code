@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "002-CapacityCosting"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "12012f6a-c9f1-46f0-a45f-3c2a02d684c6"
+  }
+}

@@ -1,0 +1,745 @@
+{
+  "compatibilityLevel": 1567,
+  "model": {
+    "annotations": [
+      {
+        "name": "__PBI_TimeIntelligenceEnabled",
+        "value": "0"
+      },
+      {
+        "name": "PBI_QueryOrder",
+        "value": "[\"API prices\",\"MeasuresTb\",\"License Prices\",\"User license range\",\"F64baseline\",\"azure_price_api_base_url\",\"currency\",\"region\",\"SKU prices\"]"
+      },
+      {
+        "name": "PBI_ProTooling",
+        "value": "[\"DevMode\"]"
+      }
+    ],
+    "culture": "en-AU",
+    "cultures": [
+      {
+        "name": "en-AU",
+        "linguisticMetadata": {
+          "content": {
+            "Language": "en-US",
+            "Version": "1.0.0"
+          },
+          "contentType": "json"
+        }
+      }
+    ],
+    "dataAccessOptions": {
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": true
+    },
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "expressions": [
+      {
+        "name": "API prices",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "description": [
+          "Code snippet from Ali Harrison",
+          "Prices are per CU",
+          "Requires internet connection & HMTL read to refresh - would need a VM with webclient enabled to enable auto-refresh"
+        ],
+        "expression": [
+          "let",
+          "    api_filter = \"/?currencyCode='\" & currency & \"'&$filter=armRegionName eq '\" & region & \"' and serviceName eq 'Microsoft Fabric' and armSkuName eq 'Fabric_Capacity_CU_Hour'\",",
+          "    Source = Json.Document(Web.Contents(azure_price_api_base_url & api_filter)),",
+          "    #\"Converted to Table\" = Table.FromRecords({Source}),",
+          "    #\"Expanded Items\" = Table.ExpandListColumn(#\"Converted to Table\", \"Items\"),",
+          "    #\"Expanded Items1\" = Table.ExpandRecordColumn(#\"Expanded Items\", \"Items\", {\"currencyCode\", \"tierMinimumUnits\", \"reservationTerm\", \"retailPrice\", \"unitPrice\", \"armRegionName\", \"location\", \"effectiveStartDate\", \"meterId\", \"meterName\", \"productId\", \"skuId\", \"productName\", \"skuName\", \"serviceName\", \"serviceId\", \"serviceFamily\", \"unitOfMeasure\", \"type\", \"isPrimaryMeterRegion\", \"armSkuName\"}, {\"Items.currencyCode\", \"Items.tierMinimumUnits\", \"Items.reservationTerm\", \"Items.retailPrice\", \"Items.unitPrice\", \"Items.armRegionName\", \"Items.location\", \"Items.effectiveStartDate\", \"Items.meterId\", \"Items.meterName\", \"Items.productId\", \"Items.skuId\", \"Items.productName\", \"Items.skuName\", \"Items.serviceName\", \"Items.serviceId\", \"Items.serviceFamily\", \"Items.unitOfMeasure\", \"Items.type\", \"Items.isPrimaryMeterRegion\", \"Items.armSkuName\"}),",
+          "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Expanded Items1\",{{\"BillingCurrency\", type text}, {\"CustomerEntityId\", type text}, {\"CustomerEntityType\", type text}, {\"Items.currencyCode\", type text}, {\"Items.tierMinimumUnits\", Int64.Type}, {\"Items.reservationTerm\", type text}, {\"Items.retailPrice\", type number}, {\"Items.unitPrice\", type number}, {\"Items.armRegionName\", type text}, {\"Items.location\", type text}, {\"Items.effectiveStartDate\", type datetime}, {\"Items.meterId\", type text}, {\"Items.meterName\", type text}, {\"Items.productId\", type text}, {\"Items.skuId\", type text}, {\"Items.productName\", type text}, {\"Items.skuName\", type text}, {\"Items.serviceName\", type text}, {\"Items.serviceId\", type text}, {\"Items.serviceFamily\", type text}, {\"Items.unitOfMeasure\", type text}, {\"Items.type\", type text}, {\"Items.isPrimaryMeterRegion\", type logical}, {\"Items.armSkuName\", type text}, {\"NextPageLink\", type any}, {\"Count\", Int64.Type}}),",
+          "    #\"Removed Other Columns\" = Table.SelectColumns(#\"Changed Type\",{\"Items.type\", \"Items.productName\", \"Items.unitPrice\", \"Items.reservationTerm\"}),",
+          "    #\"Renamed Columns\" = Table.RenameColumns(#\"Removed Other Columns\",{{\"Items.type\", \"type\"}, {\"Items.productName\", \"product_name\"}, {\"Items.unitPrice\", \"unit_price\"}, {\"Items.reservationTerm\", \"reservation_term\"}}),",
+          "    #\"Added mode\" = Table.AddColumn(#\"Renamed Columns\", \"Payment Type\", each if [type] = \"Consumption\" then \"Pay-as-you-go\" else if [type] = \"Reservation\" then \"Reservation\" else [type]),",
+          "    #\"Added hourly_price\" = Table.AddColumn(#\"Added mode\", \"hourly_price\", each if [reservation_term] = \"1 Year\" then [unit_price] / 365 / 24 else [unit_price], type number),",
+          "    // ratio of hourly price to monthly price gives 729.999...",
+          "    #\"Added monthly_price\" = Table.AddColumn(#\"Added hourly_price\", \"monthly_price\", each 730 * [hourly_price])",
+          "in",
+          "    #\"Added monthly_price\""
+        ],
+        "kind": "m",
+        "lineageTag": "e64bd9a0-6a5d-42fe-9bc1-5884aaf08e80",
+        "queryGroup": "01 Stg"
+      },
+      {
+        "name": "azure_price_api_base_url",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Text"
+          }
+        ],
+        "expression": "\"https://prices.azure.com/api/retail/prices\" meta [IsParameterQuery=true, List={\"https://prices.azure.com/api/retail/prices\"}, DefaultValue=\"https://prices.azure.com/api/retail/prices\", Type=\"Text\", IsParameterQueryRequired=true]",
+        "kind": "m",
+        "lineageTag": "f174eac0-85d7-4720-8a6c-1d75ac73be40",
+        "queryGroup": "00 Utils\\00.00 Params"
+      },
+      {
+        "name": "currency",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Text"
+          }
+        ],
+        "expression": "\"AUD\" meta [IsParameterQuery=true, List={\"AUD\"}, DefaultValue=\"AUD\", Type=\"Text\", IsParameterQueryRequired=true]",
+        "kind": "m",
+        "lineageTag": "1e4cf044-6200-4e13-b23f-30182f7dd116",
+        "queryGroup": "00 Utils\\00.00 Params"
+      },
+      {
+        "name": "region",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Text"
+          }
+        ],
+        "expression": "\"australiaeast\" meta [IsParameterQuery=true, List={\"australiaeast\"}, DefaultValue=\"australiaeast\", Type=\"Text\", IsParameterQueryRequired=true]",
+        "kind": "m",
+        "lineageTag": "1b32a929-2d52-42e2-a098-6b4005f6ccb2",
+        "queryGroup": "00 Utils\\00.00 Params"
+      }
+    ],
+    "queryGroups": [
+      {
+        "annotations": [
+          {
+            "name": "PBI_QueryGroupOrder",
+            "value": "0"
+          }
+        ],
+        "folder": "00 Utils\\00.00 Params"
+      },
+      {
+        "annotations": [
+          {
+            "name": "PBI_QueryGroupOrder",
+            "value": "1"
+          }
+        ],
+        "folder": "00 Utils"
+      },
+      {
+        "annotations": [
+          {
+            "name": "PBI_QueryGroupOrder",
+            "value": "2"
+          }
+        ],
+        "folder": "01 Stg"
+      },
+      {
+        "annotations": [
+          {
+            "name": "PBI_QueryGroupOrder",
+            "value": "3"
+          }
+        ],
+        "folder": "02 Model Tbs"
+      }
+    ],
+    "sourceQueryCulture": "en-AU",
+    "tables": [
+      {
+        "name": "License Prices",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "License Type",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "SortByColumn"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "3db1e202-b0f1-4468-bdae-ae72e6fecc20",
+            "sortByColumn": "Cost",
+            "sourceColumn": "License Type",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Cost",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "96eaecda-2860-47fb-8931-0d5700c3f93a",
+            "sourceColumn": "Cost",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "4c16ba77-31ab-495f-8b82-677595d530d1",
+        "partitions": [
+          {
+            "name": "License Prices",
+            "mode": "import",
+            "queryGroup": "02 Model Tbs",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Web.BrowserContents(\"https://www.microsoft.com/en-au/power-platform/products/power-bi/pricing#tabs-pill-bar-ocbbe94_tab1\" & \"/html/body/div[1]/div[3]/div/div[2]/main/div/div/div/div[3]/div[2]/div[1]/div/div[2]/div/div[1]/div/div[2]/div/div/div[1]/div/div/div/div[2]/div/div[2]/div/div/div[3]/div[2]/span\"),",
+                "    #\"Extracted Table From Html\" = Html.Table(Source, {{\"Column1\", \".container .oc-displayListPrice\"}, {\"Column2\", \".section-master\\-\\-breadth-comfortable .base DIV\"}, {\"Column3\", \".bg\\-\\-card-normal H3\"}, {\"Column4\", \".layout .btn\\-\\-md:nth-child(1) *\"}}, [RowSelector=\".sku-cards__card\"]),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Extracted Table From Html\",{{\"Column1\", type text}, {\"Column2\", type text}, {\"Column3\", type text}, {\"Column4\", type text}}),",
+                "    #\"Removed Other Columns\" = Table.SelectColumns(#\"Changed Type\",{\"Column3\", \"Column1\"}),",
+                "    #\"Renamed Columns\" = Table.RenameColumns(#\"Removed Other Columns\",{{\"Column3\", \"License Type\"}, {\"Column1\", \"Cost\"}}),",
+                "    #\"Filtered to per user\" = Table.SelectRows(#\"Renamed Columns\", each ([License Type] = \"Free account\" or [License Type] = \"Power BI Premium Per User\" or [License Type] = \"Power BI Pro\")),",
+                "    #\"Extracted price\" = Table.TransformColumns(#\"Filtered to per user\", {{\"Cost\", each Text.AfterDelimiter(_, \"AU$\"), type text}}),",
+                "    #\"Replaced blank w 0\" = Table.ReplaceValue(#\"Extracted price\",\"\",\"0\",Replacer.ReplaceValue,{\"Cost\"}),",
+                "    #\"Changed price to number\" = Table.TransformColumnTypes(#\"Replaced blank w 0\",{{\"Cost\", type number}}),",
+                "    #\"Removed Duplicates\" = Table.Distinct(#\"Changed price to number\", {\"License Type\"})",
+                "in",
+                "    #\"Removed Duplicates\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "User license range",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Number Licenses",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "fd18762b-b5a3-4687-89c7-a4b8d60a75cd",
+            "sourceColumn": "Number Licenses",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "d0afb303-5ea5-4b59-a968-fe05f942686c",
+        "partitions": [
+          {
+            "name": "User license range",
+            "mode": "import",
+            "queryGroup": "02 Model Tbs",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = List.Numbers(0,71,10),",
+                "    #\"Converted to Table\" = Table.FromList(Source, Splitter.SplitByNothing(), null, null, ExtraValues.Error),",
+                "    #\"Changed to numbers\" = Table.TransformColumnTypes(#\"Converted to Table\",{{\"Column1\", Int64.Type}}),",
+                "    #\"Renamed Columns\" = Table.RenameColumns(#\"Changed to numbers\",{{\"Column1\", \"Number Licenses\"}})",
+                "in",
+                "    #\"Renamed Columns\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "MeasuresTb",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          },
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          }
+        ],
+        "lineageTag": "1a002336-b94b-4e36-b5c0-033b0edf0b14",
+        "measures": [
+          {
+            "name": "Additional Users",
+            "expression": "SELECTEDVALUE('User license range'[Number Licenses])",
+            "formatString": "0",
+            "lineageTag": "9b023907-aa20-4e5c-907e-cc493e7fdbe7"
+          },
+          {
+            "name": "LicensingCost",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "SELECTEDVALUE('License Prices'[Cost]) * MAX('User license range'[Number Licenses])",
+            "lineageTag": "56de21c5-dcda-414f-af44-ad5c9df0d1ca"
+          },
+          {
+            "name": "F64",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": [
+              "CALCULATE(",
+              "    MAX('F64baseline'[Monthly Price])",
+              ")"
+            ],
+            "lineageTag": "103b02d6-715b-48e3-9d23-ebc1e857debe"
+          },
+          {
+            "name": "Capacity Cost",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"currencyCulture\":\"en-AU\"}"
+              }
+            ],
+            "expression": [
+              "",
+              "    VAR activePerc = If([SelectedMode] <> \"Reservation\", 'Up time'[Up time Value], 1)",
+              "    VAR cost = CALCULATE(",
+              "        MAX('SKU prices'[Monthly Price])",
+              "        , FILTER('SKU prices'",
+              "            , 'SKU prices'[SKU] = SELECTEDVALUE('SKU prices'[SKU])",
+              "        )",
+              "    )",
+              "    RETURN cost * activePerc"
+            ],
+            "formatString": "\\$#,0.00;-\\$#,0.00;\\$#,0.00",
+            "lineageTag": "e87a82fb-5f83-4a87-bf35-f4cd771210a9"
+          },
+          {
+            "name": "TotalCost",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"currencyCulture\":\"en-AU\"}"
+              }
+            ],
+            "expression": "[LicensingCost] + [Capacity Cost]",
+            "formatString": "\\$#,0.00;-\\$#,0.00;\\$#,0.00",
+            "lineageTag": "79bffc1c-6906-48c7-88ad-b486ea3c7903"
+          },
+          {
+            "name": "Breakeven",
+            "expression": [
+              "",
+              "var BreakEvenCount = ([F64] - [Capacity Cost]) / SELECTEDVALUE('License Prices'[Cost])",
+              "var ReturnObj = IF(BreakEvenCount > 0, BreakEvenCount, 0)",
+              "",
+              "RETURN ROUNDUP(ReturnObj, 0)"
+            ],
+            "formatString": "0",
+            "lineageTag": "b236ec3a-9527-4eb5-b7c6-b43616087f9d"
+          },
+          {
+            "name": "ReservedCost",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"currencyCulture\":\"en-AU\"}"
+              }
+            ],
+            "expression": [
+              "CALCULATE(",
+              "        MAX('SKU prices'[Monthly Price])",
+              "        , 'SKU prices'[SKU] = SELECTEDVALUE('SKU prices'[SKU])",
+              "        , 'SKU prices'[Mode] = \"Reservation\"",
+              "    )"
+            ],
+            "formatString": "\\$#,0.00;-\\$#,0.00;\\$#,0.00",
+            "lineageTag": "c335da40-8f4e-492c-912e-d4af2d5e7028"
+          },
+          {
+            "name": "PAYG saving",
+            "expression": [
+              "",
+              "    VAR divsionValue = DIVIDE([Capacity Cost], [ReservedCost], 0)",
+              "    VAR noSavingCheck = divsionValue >= 1",
+              "    VAR returnObj = IF(noSavingCheck, (1-divsionValue), divsionValue)",
+              "RETURN returnObj"
+            ],
+            "formatString": "0.00%;-0.00%;0.00%",
+            "lineageTag": "0f9e0f3e-15ef-4bed-9e68-cedd8dba3185"
+          },
+          {
+            "name": "SavingColour",
+            "expression": [
+              "//IF([PAYG saving] > 0, \"#77bf62\", \"#c84547\")",
+              "SWITCH(TRUE",
+              "    , [PAYG saving] > 0, \"#77bf62\"",
+              "    , [PAYG saving] = 0, \"#edb938\"",
+              "    , [PAYG saving] < 0, \"#c84547\"",
+              ")"
+            ],
+            "lineageTag": "737db013-2ec0-4409-93b0-af3d527fad00"
+          },
+          {
+            "name": "SelectedMode",
+            "expression": "SELECTEDVALUE('SKU prices'[Mode])",
+            "lineageTag": "c24c7d77-3f7a-4b31-b580-aefe1f918ed0"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "MeasuresTb",
+            "mode": "import",
+            "queryGroup": "00 Utils",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText(\"i44FAA==\", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(Source,{{\"Column1\", type text}}),",
+                "    #\"Removed Columns\" = Table.RemoveColumns(#\"Changed Type\",{\"Column1\"})",
+                "in",
+                "    #\"Removed Columns\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "F64baseline",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Exception"
+          }
+        ],
+        "columns": [
+          {
+            "name": "SKU",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "d583b977-954a-49ad-ad0d-0ccb04aed0aa",
+            "sourceColumn": "SKU",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Capacity unit (CU)",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "968d857a-ae5e-4455-bdfd-de42708ff7d5",
+            "sourceColumn": "Capacity unit (CU)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Mode",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "30d605d0-6290-4cf7-97b1-dce2bd47111b",
+            "sourceColumn": "Mode",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Hourly Price",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "74f929cb-cc04-474a-bbff-d16c6d748237",
+            "sourceColumn": "Hourly Price",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Monthly Price",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "d0f81647-d758-4d5d-87de-f39ff3655e9f",
+            "sourceColumn": "Monthly Price",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "e6136348-544d-4d84-9b12-65a5a1434663",
+        "partitions": [
+          {
+            "name": "F64baseline",
+            "mode": "import",
+            "queryGroup": "02 Model Tbs",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = #\"SKU prices\",",
+                "    #\"Filtered Rows\" = Table.SelectRows(Source, each ([SKU] = \"F64\") and ([Mode] = \"Reservation\"))",
+                "in",
+                "    #\"Filtered Rows\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Up time",
+        "annotations": [
+          {
+            "name": "PBI_Id",
+            "value": "00797d57fcf14baf9cb73191a9bd8473"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Up time",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "double",
+            "extendedProperties": [
+              {
+                "name": "ParameterMetadata",
+                "type": "json",
+                "value": {
+                  "version": 0
+                }
+              }
+            ],
+            "formatString": "0%;-0%;0%",
+            "isDataTypeInferred": true,
+            "isNameInferred": false,
+            "lineageTag": "50d0ad60-d33f-479e-874a-4c2337c5077b",
+            "sourceColumn": "[Value]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          }
+        ],
+        "lineageTag": "ab1b8326-f001-4164-b858-ffc259b0243b",
+        "measures": [
+          {
+            "name": "Up time Value",
+            "expression": "SELECTEDVALUE('Up time'[Up time], 0.6)",
+            "formatString": "0.00%;-0.00%;0.00%",
+            "lineageTag": "b0b55cad-f76d-4a75-a977-2ed6325564be"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Up time",
+            "mode": "import",
+            "source": {
+              "expression": "GENERATESERIES(0, 1, 0.01)",
+              "type": "calculated"
+            }
+          }
+        ]
+      },
+      {
+        "name": "SKU prices",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "SKU",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "SortByColumn"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "e39bdfe2-526b-428f-8c73-fa9d23470326",
+            "sortByColumn": "Capacity unit (CU)",
+            "sourceColumn": "SKU",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Capacity unit (CU)",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "a6853591-ab64-4212-b9c2-7546798b1f9f",
+            "sourceColumn": "Capacity unit (CU)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Mode",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "c4dd68d3-0aa8-4e5f-9e4a-6e76a8a8942c",
+            "sourceColumn": "Mode",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Hourly Price",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "SortByColumn"
+              }
+            ],
+            "dataType": "double",
+            "formatString": "0.00",
+            "lineageTag": "bd5dfd02-32a6-48d8-857c-02a8877fc352",
+            "sortByColumn": "Capacity unit (CU)",
+            "sourceColumn": "Hourly Price",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Monthly Price",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "SortByColumn"
+              }
+            ],
+            "dataType": "double",
+            "formatString": "0.00",
+            "lineageTag": "8a96b86a-844f-4f2a-8098-dc8d7fa336a3",
+            "sortByColumn": "Capacity unit (CU)",
+            "sourceColumn": "Monthly Price",
+            "summarizeBy": "none"
+          }
+        ],
+        "description": "Prices are returned for default: Region = US Central, Currency = USD",
+        "lineageTag": "61d245f2-1766-4d9d-b4cd-e52be49e07d0",
+        "partitions": [
+          {
+            "name": "SKU prices",
+            "mode": "import",
+            "queryGroup": "02 Model Tbs",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Web.BrowserContents(\"https://azure.microsoft.com/en-au/pricing/details/microsoft-fabric/?culture=en-au&country=au\" & \"/html/body/main/section[3]/div[1]/div/div/div[2]/table/tbody/tr[1]\"),",
+                "    #\"Extracted Table From Html\" = Html.Table(Source, {{\"Column1\", \"DIV.row.row-size3.column:nth-child(6) > DIV.data-table__shadow-wrapper > DIV.data-table-base.data-table\\-\\-pricing > TABLE.data-table__table.data-table__table\\-\\-pricing > * > TR > :nth-child(1)\"}, {\"Column2\", \"DIV.row.row-size3.column:nth-child(6) > DIV.data-table__shadow-wrapper > DIV.data-table-base.data-table\\-\\-pricing > TABLE.data-table__table.data-table__table\\-\\-pricing > * > TR > :nth-child(2)\"}, {\"Column3\", \"DIV.row.row-size3.column:nth-child(6) > DIV.data-table__shadow-wrapper > DIV.data-table-base.data-table\\-\\-pricing > TABLE.data-table__table.data-table__table\\-\\-pricing > * > TR > :nth-child(3)\"}, {\"Column4\", \"DIV.row.row-size3.column:nth-child(6) > DIV.data-table__shadow-wrapper > DIV.data-table-base.data-table\\-\\-pricing > TABLE.data-table__table.data-table__table\\-\\-pricing > * > TR > :nth-child(4)\"}}, [RowSelector=\"DIV.row.row-size3.column:nth-child(6) > DIV.data-table__shadow-wrapper > DIV.data-table-base.data-table\\-\\-pricing > TABLE.data-table__table.data-table__table\\-\\-pricing > * > TR\"]),",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(#\"Extracted Table From Html\", [PromoteAllScalars=true]),",
+                "    #\"Filtered to F SKUs\" = Table.SelectRows(#\"Promoted Headers\", each Text.StartsWith([SKU], \"F\")),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Filtered to F SKUs\",{{\"SKU\", type text}, {\"Capacity unit (CU)\", Int64.Type}, {\"Pay-as-you-go\", type text}, {\"Reservation\", type text}}),",
+                "    #\"extracted PAYG price\" = Table.TransformColumns(#\"Changed Type\", {{\"Pay-as-you-go\", each Text.BetweenDelimiters(_, \"$\", \"/\"), type text}}),",
+                "    #\"extracted reserved price\" = Table.TransformColumns(#\"extracted PAYG price\", {{\"Reservation\", each Text.BetweenDelimiters(_, \"$\", \"/\"), type text}}),",
+                "    #\"Unpivoted Other Columns\" = Table.UnpivotOtherColumns(#\"extracted reserved price\", {\"SKU\", \"Capacity unit (CU)\"}, \"Mode\", \"Price\"),",
+                "    #\"Removed Other Columns\" = Table.SelectColumns(#\"Unpivoted Other Columns\",{\"SKU\", \"Capacity unit (CU)\", \"Mode\"}),",
+                "    #\"Merged Queries\" = Table.NestedJoin(#\"Removed Other Columns\", {\"Mode\"}, #\"API prices\", {\"Payment Type\"}, \"API prices\", JoinKind.LeftOuter),",
+                "    #\"Expanded API prices\" = Table.ExpandTableColumn(#\"Merged Queries\", \"API prices\", {\"hourly_price\", \"monthly_price\"}, {\"API prices.hourly_price\", \"API prices.monthly_price\"}),",
+                "    #\"Added Hourly price\" = Table.AddColumn(#\"Expanded API prices\", \"Hourly Price\", each [#\"Capacity unit (CU)\"] * [API prices.hourly_price], type number),",
+                "    #\"Added Monthly price\" = Table.AddColumn(#\"Added Hourly price\", \"Monthly Price\", each [#\"Capacity unit (CU)\"] * [API prices.monthly_price], type number),",
+                "    #\"Removed Columns\" = Table.RemoveColumns(#\"Added Monthly price\",{\"API prices.hourly_price\", \"API prices.monthly_price\"})",
+                "in",
+                "    #\"Removed Columns\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

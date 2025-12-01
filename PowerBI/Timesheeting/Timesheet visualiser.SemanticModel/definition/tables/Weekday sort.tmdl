@@ -1,0 +1,48 @@
+/// Monday :: Sunday in order
+table 'Weekday sort'
+	lineageTag: 39fc2549-dc34-4219-bec2-08846b0890ce
+
+	column Day
+		dataType: string
+		lineageTag: 87e75270-5438-42d3-b4ed-f7180776b8e8
+		summarizeBy: none
+		sourceColumn: Day
+		sortByColumn: 'Sort order'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sort order'
+		dataType: int64
+		formatString: 0
+		lineageTag: c7ea2080-72af-4ecf-8cab-98ab83da06ab
+		summarizeBy: none
+		sourceColumn: Sort order
+
+		annotation SummarizationSetBy = Automatic
+
+	column Weekday
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 741fb428-7a1a-4185-98d0-a03ac14952c7
+		summarizeBy: none
+		sourceColumn: Weekday
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Weekday sort-19e0d3d9-2015-481f-8bb0-fb2fb2eb6a3f' = m
+		mode: import
+		queryGroup: 02-ModelTbs
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45W8s3PS0msVNJRMgTikKBQV6VYnWilkNLUYoiwEbJweGpKHkzCGEV9RmkRVNwEWdytKBMiaoosGpxYUloEETcDYjdHn2CoRCnUMeYI4VgA", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Day = _t, #"Sort order" = _t, Weekday = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Day", type text}, {"Sort order", Int64.Type}}),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Changed Type",{{"Weekday", type logical}})
+				in
+				    #"Changed Type1"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

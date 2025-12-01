@@ -1,0 +1,101 @@
+table 'Raw data'
+	lineageTag: 43ef1250-1f83-4431-92c6-94c08ac36687
+
+	column 'Source.Name'
+		dataType: string
+		lineageTag: 6164bb2e-45f6-486f-90a6-fe1d3d591317
+		summarizeBy: none
+		sourceColumn: Source.Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Time
+		dataType: string
+		lineageTag: 20635343-f8f4-4c52-a0d7-815204877f4a
+		summarizeBy: none
+		sourceColumn: Time
+
+		annotation SummarizationSetBy = Automatic
+
+	column Monday
+		dataType: string
+		lineageTag: d87fb900-dd64-458d-b1ac-b3f734d37d6f
+		summarizeBy: none
+		sourceColumn: Monday
+
+		annotation SummarizationSetBy = Automatic
+
+	column Tuesday
+		dataType: string
+		lineageTag: 3a083395-211f-4c87-abb6-d90c27f2f173
+		summarizeBy: none
+		sourceColumn: Tuesday
+
+		annotation SummarizationSetBy = Automatic
+
+	column Wednesday
+		dataType: string
+		lineageTag: 0fe0e0f9-59f2-4322-ad32-8a51b432fcc4
+		summarizeBy: none
+		sourceColumn: Wednesday
+
+		annotation SummarizationSetBy = Automatic
+
+	column Thursday
+		dataType: string
+		lineageTag: bfce7b2e-b8c9-4204-9652-11ab2ea83f21
+		summarizeBy: none
+		sourceColumn: Thursday
+
+		annotation SummarizationSetBy = Automatic
+
+	column Friday
+		dataType: string
+		lineageTag: 468ef574-ec33-4d2a-b17a-d14b13dcd3a5
+		summarizeBy: none
+		sourceColumn: Friday
+
+		annotation SummarizationSetBy = Automatic
+
+	column Saturday
+		dataType: string
+		lineageTag: dd92558d-c49c-4c5e-b336-38898690b98f
+		summarizeBy: none
+		sourceColumn: Saturday
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sunday
+		dataType: string
+		lineageTag: ea95d352-0c91-4c56-b8fb-b95f2169c488
+		summarizeBy: none
+		sourceColumn: Sunday
+
+		annotation SummarizationSetBy = Automatic
+
+	column Notes
+		dataType: string
+		lineageTag: caba999d-316d-45c5-85d4-0285f1912a47
+		summarizeBy: none
+		sourceColumn: Notes
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Raw data-70b164ce-2476-4fa9-9e67-35efb3f79966' = m
+		mode: import
+		queryGroup: 01-Stg
+		source =
+				let
+				    Source = Folder.Files(SourceDir),
+				    #"Filtered Hidden Files1" = Table.SelectRows(Source, each [Attributes]?[Hidden]? <> true),
+				    #"Invoke Custom Function1" = Table.AddColumn(#"Filtered Hidden Files1", "Transform File", each #"Transform File"([Content])),
+				    #"Renamed Columns1" = Table.RenameColumns(#"Invoke Custom Function1", {"Name", "Source.Name"}),
+				    #"Removed Other Columns1" = Table.SelectColumns(#"Renamed Columns1", {"Source.Name", "Transform File"}),
+				    #"Expanded Table Column1" = Table.ExpandTableColumn(#"Removed Other Columns1", "Transform File", Table.ColumnNames(#"Transform File"(#"Sample File")))
+				in
+				    #"Expanded Table Column1"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

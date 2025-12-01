@@ -1,0 +1,466 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "name": "3b41974b5000405fcd29",
+  "position": {
+    "x": 15.454545454545453,
+    "y": 26.36363636363636,
+    "z": 1000,
+    "height": 293.63636363636363,
+    "width": 670
+  },
+  "visual": {
+    "visualType": "ribbonChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "PropertyVariationSource": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Pivotted"
+                            }
+                          },
+                          "Name": "Variation",
+                          "Property": "Week Start"
+                        }
+                      },
+                      "Hierarchy": "Date Hierarchy"
+                    }
+                  },
+                  "Level": "Year"
+                }
+              },
+              "queryRef": "Pivotted.Week Start.Variation.Date Hierarchy.Year",
+              "nativeQueryRef": "Week Start Year",
+              "active": true
+            },
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "PropertyVariationSource": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Pivotted"
+                            }
+                          },
+                          "Name": "Variation",
+                          "Property": "Week Start"
+                        }
+                      },
+                      "Hierarchy": "Date Hierarchy"
+                    }
+                  },
+                  "Level": "Month"
+                }
+              },
+              "queryRef": "Pivotted.Week Start.Variation.Date Hierarchy.Month",
+              "nativeQueryRef": "Week Start Month",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Pivotted"
+                    }
+                  },
+                  "Property": "Week Start - Sort"
+                }
+              },
+              "queryRef": "Pivotted.Week Start - Sort",
+              "nativeQueryRef": "Week Start - Sort",
+              "active": false
+            }
+          ]
+        },
+        "Series": {
+          "projections": [
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Pivotted"
+                        }
+                      },
+                      "Hierarchy": "Activity Hierarchy"
+                    }
+                  },
+                  "Level": "Parent Activity"
+                }
+              },
+              "queryRef": "Pivotted.Activity Hierarchy.Parent Activity",
+              "nativeQueryRef": "Parent Activity"
+            }
+          ]
+        },
+        "Tooltips": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "HierarchyLevel": {
+                      "Expression": {
+                        "Hierarchy": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Pivotted"
+                            }
+                          },
+                          "Hierarchy": "Activity Hierarchy"
+                        }
+                      },
+                      "Level": "Child 1 Activity"
+                    }
+                  },
+                  "Function": 2
+                }
+              },
+              "queryRef": "Min(Pivotted.Activity Hierarchy.Child 1 Activity)",
+              "nativeQueryRef": "Activities for group:",
+              "displayName": "Activities for group:"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Measures Table"
+                    }
+                  },
+                  "Property": "TimeSpent"
+                }
+              },
+              "queryRef": "Measures Table.TimeSpent",
+              "nativeQueryRef": "TimeSpent"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "HierarchyLevel": {
+                "Expression": {
+                  "Hierarchy": {
+                    "Expression": {
+                      "PropertyVariationSource": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pivotted"
+                          }
+                        },
+                        "Name": "Variation",
+                        "Property": "Week Start"
+                      }
+                    },
+                    "Hierarchy": "Date Hierarchy"
+                  }
+                },
+                "Level": "Year"
+              }
+            },
+            "direction": "Ascending"
+          },
+          {
+            "field": {
+              "HierarchyLevel": {
+                "Expression": {
+                  "Hierarchy": {
+                    "Expression": {
+                      "PropertyVariationSource": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Pivotted"
+                          }
+                        },
+                        "Name": "Variation",
+                        "Property": "Week Start"
+                      }
+                    },
+                    "Hierarchy": "Date Hierarchy"
+                  }
+                },
+                "Level": "Month"
+              }
+            },
+            "direction": "Ascending"
+          },
+          {
+            "field": {
+              "HierarchyLevel": {
+                "Expression": {
+                  "Hierarchy": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "Pivotted"
+                      }
+                    },
+                    "Hierarchy": "Activity Hierarchy"
+                  }
+                },
+                "Level": "Parent Activity"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "legend": [
+        {
+          "properties": {
+            "position": {
+              "expr": {
+                "Literal": {
+                  "Value": "'LeftCenter'"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "8D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "categoryAxis": [
+        {
+          "properties": {
+            "maxMarginFactor": {
+              "expr": {
+                "Literal": {
+                  "Value": "25L"
+                }
+              }
+            },
+            "preferredCategoryWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "20D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "layout": [
+        {
+          "properties": {
+            "stackedGapSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "padding": [
+        {
+          "properties": {
+            "left": {
+              "expr": {
+                "Literal": {
+                  "Value": "5D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'How time was spent'"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'center'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "parentGroupName": "c3b59b5d75320fea6361",
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "a018f7c24bc7c63787a9",
+        "field": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "PropertyVariationSource": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "Pivotted"
+                      }
+                    },
+                    "Name": "Variation",
+                    "Property": "Week Start"
+                  }
+                },
+                "Hierarchy": "Date Hierarchy"
+              }
+            },
+            "Level": "Year"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "afed8b8a2c52e3f809f1",
+        "field": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "PropertyVariationSource": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "Pivotted"
+                      }
+                    },
+                    "Name": "Variation",
+                    "Property": "Week Start"
+                  }
+                },
+                "Hierarchy": "Date Hierarchy"
+              }
+            },
+            "Level": "Month"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "210f1a42cd2e7a6ba0c4",
+        "field": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Pivotted"
+                  }
+                },
+                "Hierarchy": "Activity Hierarchy"
+              }
+            },
+            "Level": "Parent Activity"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "2f9572c486cffd5d688a",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "HierarchyLevel": {
+                "Expression": {
+                  "Hierarchy": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "Pivotted"
+                      }
+                    },
+                    "Hierarchy": "Activity Hierarchy"
+                  }
+                },
+                "Level": "Child 1 Activity"
+              }
+            },
+            "Function": 2
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "fe925153090065239393",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Pivotted"
+              }
+            },
+            "Property": "Week Start - Sort"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "f42ba30b0505a41add20",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Measures Table"
+              }
+            },
+            "Property": "TimeSpent"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

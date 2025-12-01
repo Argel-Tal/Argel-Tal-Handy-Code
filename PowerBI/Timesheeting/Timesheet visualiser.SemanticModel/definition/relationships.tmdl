@@ -1,0 +1,13 @@
+relationship 42796f81-7da4-434b-af09-0ed61c9c344b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Pivotted.'Week Start'
+	toColumn: LocalDateTable_b1b8f686-946b-4700-b7d7-a0032341467f.Date
+
+relationship d4716a41-a594-4a2f-be71-016a65481e03
+	fromColumn: Pivotted.Day
+	toColumn: 'Weekday sort'.Day
+
+relationship af04704a-ebb9-f7e4-faa9-1e33b8c9f8bf
+	fromColumn: Pivotted.'Child 1 Activity'
+	toColumn: 'productive keywords'.word
+

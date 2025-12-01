@@ -1,0 +1,51 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-AU
+	dataAccessOptions
+		fastCombine
+		legacyRedirects
+		returnErrorValuesAsNull
+
+queryGroup '00 utilities\Transform File from Records'
+
+	annotation PBI_QueryGroupOrder = 2
+
+queryGroup '00 utilities\00-00 Params'
+
+	annotation PBI_QueryGroupOrder = 1
+
+queryGroup '00 utilities\Transform File from Records\Helper Queries'
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup 01-Stg
+
+	annotation PBI_QueryGroupOrder = 3
+
+queryGroup 02-ModelTbs
+
+	annotation PBI_QueryGroupOrder = 4
+
+queryGroup '00 utilities'
+
+	annotation PBI_QueryGroupOrder = 0
+
+annotation PBI_QueryOrder = ["Parameter1","Transform Sample File","Sample File","Transform File","Weekday sort","Raw data","Pivotted","SourceDir","Measures Table","productive keywords","FortnightlyHours","WeeklyHours"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table 'Raw data'
+ref table DateTableTemplate_093cc6d0-ac98-4d86-b242-8f6c76159c97
+ref table Pivotted
+ref table LocalDateTable_b1b8f686-946b-4700-b7d7-a0032341467f
+ref table 'Weekday sort'
+ref table 'Measures Table'
+ref table 'productive keywords'
+ref table GroupBy
+ref table WeeklyHours
+
+ref cultureInfo en-US
+

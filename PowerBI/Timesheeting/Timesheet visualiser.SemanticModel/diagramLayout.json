@@ -1,0 +1,113 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 147.07142694123078,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 170.52931081590646,
+            "y": 131.10398995090043
+          },
+          "nodeIndex": "Pivotted",
+          "nodeLineageTag": "d6151326-a015-4539-b0e5-54347087b791",
+          "size": {
+            "height": 294.42532086500603,
+            "width": 234
+          },
+          "zIndex": 6
+        },
+        {
+          "location": {
+            "x": 800.44662772223523,
+            "y": 0
+          },
+          "nodeIndex": "Raw data",
+          "nodeLineageTag": "43ef1250-1f83-4431-92c6-94c08ac36687",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 460.851939147119
+          },
+          "nodeIndex": "Weekday sort",
+          "nodeLineageTag": "39fc2549-dc34-4219-bec2-08846b0890ce",
+          "size": {
+            "height": 164.64266182821132,
+            "width": 234
+          },
+          "zIndex": 5
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "nodeIndex": "Measures Table",
+          "nodeLineageTag": "7a49a266-5e6c-4ca6-9e25-96bfeb443e40",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 547.88676064435754,
+            "y": 390.11796175759315
+          },
+          "nodeIndex": "productive keywords",
+          "nodeLineageTag": "6fadf5fe-7ba9-4d4f-9d5b-7ca12019dab5",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 528.496892936036,
+            "y": 0
+          },
+          "nodeIndex": "GroupBy",
+          "nodeLineageTag": "cc961da1-c67d-415a-9cba-48f34ea4b9fd",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 1084.4466277222352,
+            "y": 260.74730048766514
+          },
+          "nodeIndex": "WeeklyHours",
+          "nodeLineageTag": "7a1fac25-9403-4b4c-8f51-7b46eda67dc9",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 79.5531820376998,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

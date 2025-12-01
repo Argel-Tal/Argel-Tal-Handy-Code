@@ -1,0 +1,15 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "name": "91eb8e74c5308497c5c1",
+  "position": {
+    "x": 0,
+    "y": 496.36363636363632,
+    "z": 7000,
+    "height": 222.72727272727272,
+    "width": 342.72727272727269
+  },
+  "visualGroup": {
+    "displayName": "time card",
+    "groupMode": "ScaleMode"
+  }
+}

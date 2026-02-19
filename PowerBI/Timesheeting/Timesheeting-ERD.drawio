@@ -1,0 +1,241 @@
+<mxfile host="65bd71144e">
+    <diagram id="Timesheeting-ERD" name="Timesheeting ERD">
+        <mxGraphModel dx="2029" dy="2991" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="0" page="0" pageScale="1" pageWidth="2400" pageHeight="2400" background="#ffffff" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="MeasuresTable" value="Measures Table" style="swimlane;fontStyle=1;align=center;verticalAlign=top;                 swimlaneFillColor=#ffe6e6;startSize=30;html=1;rounded=1;shadow=1;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="50" y="200" width="280" height="190" as="geometry"/>
+                </mxCell>
+                <mxCell id="Measures_pk" value="🔑 [Measures Table]" style="text;align=left;verticalAlign=middle;spacingLeft=8;                 fontStyle=1;fontSize=10;fontColor=#0000AA;strokeColor=#0000AA;strokeWidth=2;" parent="MeasuresTable" vertex="1">
+                    <mxGeometry y="30" width="280" height="26" as="geometry"/>
+                </mxCell>
+                <mxCell id="Measures_c1" value="Work Hours weekly (measure)" style="text;align=left;verticalAlign=middle;spacingLeft=8;                 overflow=hidden;rotatable=0;fontSize=9;" parent="MeasuresTable" vertex="1">
+                    <mxGeometry y="56" width="280" height="24" as="geometry"/>
+                </mxCell>
+                <mxCell id="Measures_c2" value="TimeSpent (measure)" style="text;align=left;verticalAlign=middle;spacingLeft=8;                 overflow=hidden;rotatable=0;fontSize=9;" parent="MeasuresTable" vertex="1">
+                    <mxGeometry y="80" width="280" height="24" as="geometry"/>
+                </mxCell>
+                <mxCell id="Measures_c3" value="Excess Accrued (measure)" style="text;align=left;verticalAlign=middle;spacingLeft=8;                 overflow=hidden;rotatable=0;fontSize=9;" parent="MeasuresTable" vertex="1">
+                    <mxGeometry y="104" width="280" height="24" as="geometry"/>
+                </mxCell>
+                <mxCell id="Measures_c4" value="Worked time (measure)" style="text;align=left;verticalAlign=middle;spacingLeft=8;                 overflow=hidden;rotatable=0;fontSize=9;" parent="MeasuresTable" vertex="1">
+                    <mxGeometry y="128" width="280" height="24" as="geometry"/>
+                </mxCell>
+                <mxCell id="Measures_divider" value="" style="line;html=1;strokeWidth=1;" parent="MeasuresTable" vertex="1">
+                    <mxGeometry y="152" width="280" height="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="PivottedTable" value="Pivotted" style="swimlane;fontStyle=1;align=center;verticalAlign=top;                 swimlaneFillColor=#e1d5e7;startSize=30;html=1;rounded=1;shadow=1;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="400" y="150" width="280" height="320" as="geometry"/>
+                </mxCell>
+                <mxCell id="Pivotted_pk1" value="🔑 Week Start (datetime, PK)" style="text;align=left;verticalAlign=middle;spacingLeft=8;                 fontStyle=1;fontSize=10;fontColor=#0000AA;strokeColor=#0000AA;strokeWidth=2;" parent="PivottedTable" vertex="1">
+                    <mxGeometry y="30" width="280" height="26" as="geometry"/>
+                </mxCell>
+                <mxCell id="Pivotted_pk2" value="🔑 Time (time, PK)" style="text;align=left;verticalAlign=middle;spacingLeft=8;                 fontStyle=1;fontSize=10;fontColor=#0000AA;strokeColor=#0000AA;strokeWidth=2;" parent="PivottedTable" vertex="1">
+                    <mxGeometry y="56" width="280" height="26" as="geometry"/>
+                </mxCell>
+                <mxCell id="Pivotted_fk1" value="🔑 Day (FK→Weekday sort)" style="text;align=left;verticalAlign=middle;spacingLeft=8;                 fontStyle=1;fontSize=9;fontColor=#AA0000;" parent="PivottedTable" vertex="1">
+                    <mxGeometry y="82" width="280" height="24" as="geometry"/>
+                </mxCell>
+                <mxCell id="Pivotted_fk2" value="🔑 Child 1 Activity (FK→Productive Keywords)" style="text;align=left;verticalAlign=middle;spacingLeft=8;                 fontStyle=1;fontSize=9;fontColor=#AA0000;" parent="PivottedTable" vertex="1">
+                    <mxGeometry y="106" width="280" height="24" as="geometry"/>
+                </mxCell>
+                <mxCell id="Pivotted_fk3" value="🔑 Week Start (FK→Local Date Table)" style="text;align=left;verticalAlign=middle;spacingLeft=8;                 fontStyle=1;fontSize=9;fontColor=#AA0000;" parent="PivottedTable" vertex="1">
+                    <mxGeometry y="130" width="280" height="24" as="geometry"/>
+                </mxCell>
+                <mxCell id="Pivotted_divider" value="" style="line;html=1;strokeWidth=1;" parent="PivottedTable" vertex="1">
+                    <mxGeometry y="154" width="280" height="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="Pivotted_c1" value="TimeEnd (time)" style="text;align=left;verticalAlign=middle;spacingLeft=8;                 overflow=hidden;rotatable=0;fontSize=9;" parent="PivottedTable" vertex="1">
+                    <mxGeometry y="160" width="280" height="24" as="geometry"/>
+                </mxCell>
+                <mxCell id="Pivotted_c2" value="Parent Activity (string)" style="text;align=left;verticalAlign=middle;spacingLeft=8;                 overflow=hidden;rotatable=0;fontSize=9;" parent="PivottedTable" vertex="1">
+                    <mxGeometry y="184" width="280" height="24" as="geometry"/>
+                </mxCell>
+                <mxCell id="Pivotted_c3" value="Child 2 Activity (string)" style="text;align=left;verticalAlign=middle;spacingLeft=8;                 overflow=hidden;rotatable=0;fontSize=9;" parent="PivottedTable" vertex="1">
+                    <mxGeometry y="208" width="280" height="24" as="geometry"/>
+                </mxCell>
+                <mxCell id="Pivotted_c4" value="Day Sort (int64)" style="text;align=left;verticalAlign=middle;spacingLeft=8;                 overflow=hidden;rotatable=0;fontSize=9;" parent="PivottedTable" vertex="1">
+                    <mxGeometry y="232" width="280" height="24" as="geometry"/>
+                </mxCell>
+                <mxCell id="Pivotted_c5" value="IsWork (string)" style="text;align=left;verticalAlign=middle;spacingLeft=8;                 overflow=hidden;rotatable=0;fontSize=9;" parent="PivottedTable" vertex="1">
+                    <mxGeometry y="256" width="280" height="24" as="geometry"/>
+                </mxCell>
+                <mxCell id="Pivotted_c6" value="Week Start - Sort (string)" style="text;align=left;verticalAlign=middle;spacingLeft=8;                 overflow=hidden;rotatable=0;fontSize=9;" parent="PivottedTable" vertex="1">
+                    <mxGeometry y="280" width="280" height="24" as="geometry"/>
+                </mxCell>
+                <mxCell id="WeekdayTable" value="Weekday sort" style="swimlane;fontStyle=1;align=center;verticalAlign=top;                 swimlaneFillColor=#d5e8d4;startSize=30;html=1;rounded=1;shadow=1;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="800" y="75" width="280" height="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="Weekday_pk" value="🔑 Day (string, PK)" style="text;align=left;verticalAlign=middle;spacingLeft=8;                 fontStyle=1;fontSize=10;fontColor=#0000AA;strokeColor=#0000AA;strokeWidth=2;" parent="WeekdayTable" vertex="1">
+                    <mxGeometry y="30" width="280" height="26" as="geometry"/>
+                </mxCell>
+                <mxCell id="Weekday_divider" value="" style="line;html=1;strokeWidth=1;" parent="WeekdayTable" vertex="1">
+                    <mxGeometry y="56" width="280" height="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="Weekday_c1" value="Sort order (int64)" style="text;align=left;verticalAlign=middle;spacingLeft=8;                 overflow=hidden;rotatable=0;fontSize=9;" parent="WeekdayTable" vertex="1">
+                    <mxGeometry y="62" width="280" height="24" as="geometry"/>
+                </mxCell>
+                <mxCell id="Weekday_c2" value="Weekday (boolean)" style="text;align=left;verticalAlign=middle;spacingLeft=8;                 overflow=hidden;rotatable=0;fontSize=9;" parent="WeekdayTable" vertex="1">
+                    <mxGeometry y="86" width="280" height="24" as="geometry"/>
+                </mxCell>
+                <mxCell id="KeywordsTable" value="productive keywords" style="swimlane;fontStyle=1;align=center;verticalAlign=top;                 swimlaneFillColor=#d5e8d4;startSize=30;html=1;rounded=1;shadow=1;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="1120" y="225" width="280" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="Keywords_pk" value="🔑 word (string, PK)" style="text;align=left;verticalAlign=middle;spacingLeft=8;                 fontStyle=1;fontSize=10;fontColor=#0000AA;strokeColor=#0000AA;strokeWidth=2;" parent="KeywordsTable" vertex="1">
+                    <mxGeometry y="30" width="280" height="26" as="geometry"/>
+                </mxCell>
+                <mxCell id="Keywords_divider" value="" style="line;html=1;strokeWidth=1;" parent="KeywordsTable" vertex="1">
+                    <mxGeometry y="56" width="280" height="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="Keywords_c1" value="Productive (boolean)" style="text;align=left;verticalAlign=middle;spacingLeft=8;                 overflow=hidden;rotatable=0;fontSize=9;" parent="KeywordsTable" vertex="1">
+                    <mxGeometry y="62" width="280" height="24" as="geometry"/>
+                </mxCell>
+                <mxCell id="WeeklyHoursTable" value="WeeklyHours" style="swimlane;fontStyle=1;align=center;verticalAlign=top;                 swimlaneFillColor=#fff2cc;startSize=30;html=1;rounded=1;shadow=1;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="50" y="110" width="280" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="WeeklyHours_c1" value="WeeklyHours (double)" style="text;align=left;verticalAlign=middle;spacingLeft=8;                 overflow=hidden;rotatable=0;fontSize=9;" parent="WeeklyHoursTable" vertex="1">
+                    <mxGeometry y="30" width="280" height="24" as="geometry"/>
+                </mxCell>
+                <mxCell id="RawDataTable" value="Raw data" style="swimlane;fontStyle=1;align=center;verticalAlign=top;                 swimlaneFillColor=#eeeeee;startSize=30;html=1;rounded=1;shadow=1;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="400" y="-230" width="280" height="280" as="geometry"/>
+                </mxCell>
+                <mxCell id="RawData_pk" value="🔑 Source.Name (string, PK)" style="text;align=left;verticalAlign=middle;spacingLeft=8;                 fontStyle=1;fontSize=10;fontColor=#0000AA;strokeColor=#0000AA;strokeWidth=2;" parent="RawDataTable" vertex="1">
+                    <mxGeometry y="30" width="280" height="26" as="geometry"/>
+                </mxCell>
+                <mxCell id="RawData_divider" value="" style="line;html=1;strokeWidth=1;" parent="RawDataTable" vertex="1">
+                    <mxGeometry y="56" width="280" height="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="RawData_c1" value="Time (string)" style="text;align=left;verticalAlign=middle;spacingLeft=8;                 overflow=hidden;rotatable=0;fontSize=9;" parent="RawDataTable" vertex="1">
+                    <mxGeometry y="62" width="280" height="24" as="geometry"/>
+                </mxCell>
+                <mxCell id="RawData_c2" value="Monday (string)" style="text;align=left;verticalAlign=middle;spacingLeft=8;                 overflow=hidden;rotatable=0;fontSize=9;" parent="RawDataTable" vertex="1">
+                    <mxGeometry y="86" width="280" height="24" as="geometry"/>
+                </mxCell>
+                <mxCell id="RawData_c3" value="Tuesday (string)" style="text;align=left;verticalAlign=middle;spacingLeft=8;                 overflow=hidden;rotatable=0;fontSize=9;" parent="RawDataTable" vertex="1">
+                    <mxGeometry y="110" width="280" height="24" as="geometry"/>
+                </mxCell>
+                <mxCell id="RawData_c4" value="Wednesday (string)" style="text;align=left;verticalAlign=middle;spacingLeft=8;                 overflow=hidden;rotatable=0;fontSize=9;" parent="RawDataTable" vertex="1">
+                    <mxGeometry y="134" width="280" height="24" as="geometry"/>
+                </mxCell>
+                <mxCell id="RawData_c5" value="Thursday (string)" style="text;align=left;verticalAlign=middle;spacingLeft=8;                 overflow=hidden;rotatable=0;fontSize=9;" parent="RawDataTable" vertex="1">
+                    <mxGeometry y="158" width="280" height="24" as="geometry"/>
+                </mxCell>
+                <mxCell id="RawData_c6" value="Friday (string)" style="text;align=left;verticalAlign=middle;spacingLeft=8;                 overflow=hidden;rotatable=0;fontSize=9;" parent="RawDataTable" vertex="1">
+                    <mxGeometry y="182" width="280" height="24" as="geometry"/>
+                </mxCell>
+                <mxCell id="RawData_c7" value="Saturday (string)" style="text;align=left;verticalAlign=middle;spacingLeft=8;                 overflow=hidden;rotatable=0;fontSize=9;" parent="RawDataTable" vertex="1">
+                    <mxGeometry y="206" width="280" height="24" as="geometry"/>
+                </mxCell>
+                <mxCell id="RawData_c8" value="Sunday (string)" style="text;align=left;verticalAlign=middle;spacingLeft=8;                 overflow=hidden;rotatable=0;fontSize=9;" parent="RawDataTable" vertex="1">
+                    <mxGeometry y="230" width="280" height="24" as="geometry"/>
+                </mxCell>
+                <mxCell id="RawData_c9" value="Notes (any)" style="text;align=left;verticalAlign=middle;spacingLeft=8;                 overflow=hidden;rotatable=0;fontSize=9;" parent="RawDataTable" vertex="1">
+                    <mxGeometry y="254" width="280" height="24" as="geometry"/>
+                </mxCell>
+                <mxCell id="LocalDateTable" value="LocalDateTable" style="swimlane;fontStyle=1;align=center;verticalAlign=top;                 swimlaneFillColor=#e2efda;startSize=30;html=1;rounded=1;shadow=1;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="800" y="360" width="280" height="320" as="geometry"/>
+                </mxCell>
+                <mxCell id="DateTable_pk" value="🔑 Date (date, PK)" style="text;align=left;verticalAlign=middle;spacingLeft=8;                 fontStyle=1;fontSize=10;fontColor=#0000AA;strokeColor=#0000AA;strokeWidth=2;" parent="LocalDateTable" vertex="1">
+                    <mxGeometry y="30" width="280" height="26" as="geometry"/>
+                </mxCell>
+                <mxCell id="DateTable_divider" value="" style="line;html=1;strokeWidth=1;" parent="LocalDateTable" vertex="1">
+                    <mxGeometry y="56" width="280" height="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="DateTable_c1" value="Year (int64)" style="text;align=left;verticalAlign=middle;spacingLeft=8;                 overflow=hidden;rotatable=0;fontSize=9;" parent="LocalDateTable" vertex="1">
+                    <mxGeometry y="62" width="280" height="24" as="geometry"/>
+                </mxCell>
+                <mxCell id="DateTable_c2" value="MonthNo (int64)" style="text;align=left;verticalAlign=middle;spacingLeft=8;                 overflow=hidden;rotatable=0;fontSize=9;" parent="LocalDateTable" vertex="1">
+                    <mxGeometry y="86" width="280" height="24" as="geometry"/>
+                </mxCell>
+                <mxCell id="DateTable_c3" value="Month (string)" style="text;align=left;verticalAlign=middle;spacingLeft=8;                 overflow=hidden;rotatable=0;fontSize=9;" parent="LocalDateTable" vertex="1">
+                    <mxGeometry y="110" width="280" height="24" as="geometry"/>
+                </mxCell>
+                <mxCell id="DateTable_c4" value="QuarterNo (int64)" style="text;align=left;verticalAlign=middle;spacingLeft=8;                 overflow=hidden;rotatable=0;fontSize=9;" parent="LocalDateTable" vertex="1">
+                    <mxGeometry y="134" width="280" height="24" as="geometry"/>
+                </mxCell>
+                <mxCell id="DateTable_c5" value="Quarter (string)" style="text;align=left;verticalAlign=middle;spacingLeft=8;                 overflow=hidden;rotatable=0;fontSize=9;" parent="LocalDateTable" vertex="1">
+                    <mxGeometry y="158" width="280" height="24" as="geometry"/>
+                </mxCell>
+                <mxCell id="rel1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;                 html=1;endArrow=ERone;startArrow=ERmany;strokeWidth=2;                 strokeColor=#0000CC;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="Pivotted_fk1" target="Weekday_pk" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="&lt;span style=&quot;color: rgb(0, 0, 0); font-size: 8px;&quot;&gt;Many : One&lt;/span&gt;&lt;br style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); padding: 0px; margin: 0px; font-size: 8px;&quot;&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-size: 8px;&quot;&gt;Day = Day&lt;/span&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="rel1" vertex="1" connectable="0">
+                    <mxGeometry x="0.1344" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="rel2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;                 html=1;endArrow=ERone;startArrow=ERmany;strokeWidth=2;                 strokeColor=#0000CC;" parent="1" source="Pivotted_fk2" target="Keywords_pk" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="&lt;span style=&quot;color: rgb(0, 0, 0); font-size: 8px;&quot;&gt;Many : One&lt;/span&gt;&lt;br style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); padding: 0px; margin: 0px; font-size: 8px;&quot;&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-size: 8px;&quot;&gt;Week Start = Date&lt;/span&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="rel2" vertex="1" connectable="0">
+                    <mxGeometry x="0.155" y="1" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="rel3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;                 html=1;endArrow=ERone;startArrow=ERmany;strokeWidth=2;                 strokeColor=#0000CC;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="Pivotted_fk3" target="DateTable_pk" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="&lt;span style=&quot;color: rgb(0, 0, 0); font-size: 8px;&quot;&gt;Many : One&lt;/span&gt;&lt;br style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgb(226, 226, 226) rgb(251, 251, 251); padding: 0px; margin: 0px; font-size: 8px;&quot;&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-size: 8px;&quot;&gt;Child 1 Activity = word&lt;/span&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="rel3" vertex="1" connectable="0">
+                    <mxGeometry x="-0.1451" y="-1" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="rel4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;                 html=1;dashed=1;strokeWidth=2;                 strokeColor=#FF6600;startArrow=classic;startFill=1;endArrow=none;endFill=0;" parent="1" source="PivottedTable" target="RawDataTable" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="" style="group" vertex="1" connectable="0" parent="1">
+                    <mxGeometry x="40" y="-230" width="280" height="310" as="geometry"/>
+                </mxCell>
+                <mxCell id="legend_title" value="LEGEND" style="text;fontStyle=1;fontSize=12;align=left;verticalAlign=middle;spacingLeft=10;" parent="8" vertex="1">
+                    <mxGeometry width="274.5098039215687" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="legend_pk" value="🔑 PK (Primary Key) = Unique identifier for each row" style="text;fontSize=9;align=left;verticalAlign=top;spacingLeft=10;" parent="8" vertex="1">
+                    <mxGeometry y="30" width="274.5098039215687" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="legend_fk" value="🔑 FK (Foreign Key) = Reference to another table&#39;s PK" style="text;fontSize=9;align=left;verticalAlign=top;spacingLeft=10;" parent="8" vertex="1">
+                    <mxGeometry y="50" width="274.5098039215687" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="legend_colors_title" value="Table Types:" style="text;fontSize=9;fontStyle=1;align=left;verticalAlign=top;spacingLeft=10;" parent="8" vertex="1">
+                    <mxGeometry y="80" width="274.5098039215687" height="15" as="geometry"/>
+                </mxCell>
+                <mxCell id="legend_fact" value="■ Purple = Fact Table (Pivotted)" style="text;fontSize=8;align=left;verticalAlign=top;spacingLeft=10;" parent="8" vertex="1">
+                    <mxGeometry x="5.490196078431373" y="100" width="274.5098039215687" height="15" as="geometry"/>
+                </mxCell>
+                <mxCell id="legend_dim" value="■ Green = Dimension Tables (Weekday sort, productive keywords)" style="text;fontSize=8;align=left;verticalAlign=top;spacingLeft=10;" parent="8" vertex="1">
+                    <mxGeometry x="5.490196078431373" y="115" width="274.5098039215687" height="15" as="geometry"/>
+                </mxCell>
+                <mxCell id="legend_date" value="■ Light Green = Date Dimension (LocalDateTable)" style="text;fontSize=8;align=left;verticalAlign=top;spacingLeft=10;" parent="8" vertex="1">
+                    <mxGeometry x="5.490196078431373" y="130" width="274.5098039215687" height="15" as="geometry"/>
+                </mxCell>
+                <mxCell id="legend_ref" value="■ Yellow = Reference/Control Tables (WeeklyHours, GroupBy)" style="text;fontSize=8;align=left;verticalAlign=top;spacingLeft=10;" parent="8" vertex="1">
+                    <mxGeometry x="5.490196078431373" y="145" width="274.5098039215687" height="15" as="geometry"/>
+                </mxCell>
+                <mxCell id="legend_source" value="■ Grey = Source Tables (Raw data)" style="text;fontSize=8;align=left;verticalAlign=top;spacingLeft=10;" parent="8" vertex="1">
+                    <mxGeometry x="5.490196078431373" y="160" width="274.5098039215687" height="15" as="geometry"/>
+                </mxCell>
+                <mxCell id="legend_measures" value="■ Red = Measures Table" style="text;fontSize=8;align=left;verticalAlign=top;spacingLeft=10;" parent="8" vertex="1">
+                    <mxGeometry x="5.490196078431373" y="175" width="274.5098039215687" height="15" as="geometry"/>
+                </mxCell>
+                <mxCell id="legend_cardinality_title" value="Cardinality Notation:" style="text;fontSize=9;fontStyle=1;align=left;verticalAlign=top;spacingLeft=10;" parent="8" vertex="1">
+                    <mxGeometry y="200" width="274.5098039215687" height="15" as="geometry"/>
+                </mxCell>
+                <mxCell id="legend_card1" value="— = One (exactly one instance)" style="text;fontSize=8;align=left;verticalAlign=top;spacingLeft=10;" parent="8" vertex="1">
+                    <mxGeometry x="5.490196078431373" y="220" width="274.5098039215687" height="15" as="geometry"/>
+                </mxCell>
+                <mxCell id="legend_card2" value="crow&#39;s foot = Many (one or more instances)" style="text;fontSize=8;align=left;verticalAlign=top;spacingLeft=10;" parent="8" vertex="1">
+                    <mxGeometry x="5.490196078431373" y="235" width="274.5098039215687" height="15" as="geometry"/>
+                </mxCell>
+                <mxCell id="legend_lines_title" value="Relationship Types:" style="text;fontSize=9;fontStyle=1;align=left;verticalAlign=top;spacingLeft=10;" parent="8" vertex="1">
+                    <mxGeometry y="260" width="274.5098039215687" height="15" as="geometry"/>
+                </mxCell>
+                <mxCell id="legend_solid" value="Solid Blue Line = Identifying relationships (FK→PK)" style="text;fontSize=8;align=left;verticalAlign=top;spacingLeft=10;" parent="8" vertex="1">
+                    <mxGeometry x="5.490196078431373" y="280" width="274.5098039215687" height="15" as="geometry"/>
+                </mxCell>
+                <mxCell id="legend_dashed" value="Dashed Orange Line = Non-identifying (data flow, references)" style="text;fontSize=8;align=left;verticalAlign=top;spacingLeft=10;" parent="8" vertex="1">
+                    <mxGeometry x="5.490196078431373" y="295" width="274.5098039215687" height="15" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

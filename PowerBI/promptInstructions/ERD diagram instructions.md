@@ -21,7 +21,8 @@ This document provides step-by-step instructions for generating a professional E
 ## Step 1: Extract Model Information
 
 ### 1.1 Identify Tables
-From the `model.bim` file, locate all table definitions under the `"tables"` array.
+From the `model.bim` file, locate all enabled table definitions under the `"tables"` array. 
+Exclude any tables which are disabled for load, such as those in the Expressions section. These typically represent staging tables, and don't need to be added to final model ERDs.
 
 **Semantic Model Name:** `<!-- PLACEHOLDER: SEMANTIC_MODEL_NAME -->`
 
@@ -192,6 +193,8 @@ Each table is a swimlane with individual cells for each column:
 </mxCell>
 ```
 
+**Text annotation**: Make the relationship label a text element attached to the line, and set it to have a default colour fill background so the text is visible where lines go behind the text. Default fill ensures it works with both light and dark mode.
+
 **Cardinality arrows (Chen ERD notation):**
 - `startArrow=ERone;endArrow=ERone` - One-to-One (line on both ends)
 - `startArrow=ERmany;endArrow=ERone` - Many-to-One (crow's foot on start, line on end)
@@ -206,6 +209,8 @@ In a typical star schema, all fact-dimension relationships are Many:One:
 **Line styling:**
 - **Bidirectional**: Solid line (`strokeColor=#0000CC`, blue)
 - **Single direction**: `dashed=1` with `strokeColor=#FF6600` (orange)
+
+**Line connections**: Start and End the line from the left/right side of the table row's representing PK/FK columns, so the lines go out sideways, not overtop tables. 
 
 ### 4.2 Relationship Labels
 ```xml

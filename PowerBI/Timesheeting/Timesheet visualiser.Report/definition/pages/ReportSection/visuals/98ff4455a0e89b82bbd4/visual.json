@@ -1,0 +1,15 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "name": "98ff4455a0e89b82bbd4",
+  "position": {
+    "x": 345.45454545454544,
+    "y": 496.36363636363632,
+    "z": 9000,
+    "height": 223.63636363636363,
+    "width": 359.09090909090907
+  },
+  "visualGroup": {
+    "displayName": "Time spent proportion",
+    "groupMode": "ScaleMode"
+  }
+}

@@ -1,0 +1,184 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "name": "88c9e71971ab10543c54",
+  "position": {
+    "x": 15.454545454545453,
+    "y": 11.487603305785166,
+    "z": 1500,
+    "height": 105.45454545454544,
+    "width": 315.45454545454544
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Once \"work\" is toggled, conditional formatting will go ",
+                    "textStyle": {
+                      "fontSize": "8pt"
+                    }
+                  },
+                  {
+                    "value": "green ",
+                    "textStyle": {
+                      "fontSize": "8pt",
+                      "color": "#89e568"
+                    }
+                  },
+                  {
+                    "value": "for weeks where the correct hours (",
+                    "textStyle": {
+                      "fontSize": "8pt"
+                    }
+                  },
+                  {
+                    "value": {
+                      "propertyIdentifier": {
+                        "objectName": "values",
+                        "propertyName": "expr"
+                      },
+                      "selector": {
+                        "id": "WeeklyHours"
+                      }
+                    },
+                    "textStyle": {
+                      "fontSize": "8pt"
+                    }
+                  },
+                  {
+                    "value": ") have been completed, and ",
+                    "textStyle": {
+                      "fontSize": "8pt"
+                    }
+                  },
+                  {
+                    "value": "orange ",
+                    "textStyle": {
+                      "fontSize": "8pt",
+                      "color": "#f68b1f"
+                    }
+                  },
+                  {
+                    "value": "for weeks where excess time has been completed. ",
+                    "textStyle": {
+                      "fontSize": "8pt"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "This selection is required for correct Excess calculations, which also ",
+                    "textStyle": {
+                      "fontSize": "8pt"
+                    }
+                  },
+                  {
+                    "value": "only works at the end of the week (Friday)",
+                    "textStyle": {
+                      "fontSize": "8pt",
+                      "textDecoration": "underline"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "expr": {
+              "expr": {
+                "Min": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "Subquery": {
+                          "Query": {
+                            "Version": 2,
+                            "From": [
+                              {
+                                "Name": "w",
+                                "Entity": "WeeklyHours",
+                                "Type": 0
+                              }
+                            ],
+                            "Select": [
+                              {
+                                "Aggregation": {
+                                  "Expression": {
+                                    "Column": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Source": "w"
+                                        }
+                                      },
+                                      "Property": "WeeklyHours"
+                                    }
+                                  },
+                                  "Function": 4
+                                },
+                                "Name": "Max(WeeklyHours.WeeklyHours)"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      "Property": "Max(WeeklyHours.WeeklyHours)"
+                    }
+                  },
+                  "IncludeAllTypes": 1
+                },
+                "Annotations": {
+                  "NaturalLanguage": {
+                    "version": 1,
+                    "kind": "NaturalLanguage",
+                    "annotation": {
+                      "name": "WeeklyHours",
+                      "utterance": "max weeklyhours"
+                    }
+                  }
+                }
+              }
+            },
+            "formatString": {
+              "expr": {
+                "Literal": {
+                  "Value": "'0.00'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "WeeklyHours"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "parentGroupName": "91eb8e74c5308497c5c1"
+}

@@ -4,7 +4,7 @@
   "artifacts": [
     {
       "report": {
-        "path": "Timesheet visualiser.Report"
+        "path": "002-CapacityCosting.Report"
       }
     }
   ],

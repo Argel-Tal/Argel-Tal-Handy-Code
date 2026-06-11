@@ -1,0 +1,15 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "name": "275a8176a152fbd33fb5",
+  "position": {
+    "x": 704,
+    "y": 160,
+    "z": 1000,
+    "height": 336,
+    "width": 576
+  },
+  "visualGroup": {
+    "displayName": "hr table",
+    "groupMode": "ScaleMode"
+  }
+}

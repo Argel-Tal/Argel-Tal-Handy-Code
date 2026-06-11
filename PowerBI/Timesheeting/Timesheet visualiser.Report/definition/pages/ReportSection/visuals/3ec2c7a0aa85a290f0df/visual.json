@@ -1,0 +1,16 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "name": "3ec2c7a0aa85a290f0df",
+  "position": {
+    "x": 734,
+    "y": 512.888111888112,
+    "z": 5000,
+    "height": 196.36363636363635,
+    "width": 267.27272727272725,
+    "tabOrder": 4000
+  },
+  "visualGroup": {
+    "displayName": "clock in / out",
+    "groupMode": "ScaleMode"
+  }
+}

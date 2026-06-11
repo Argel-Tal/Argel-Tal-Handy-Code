@@ -1,0 +1,582 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "name": "03483beb5d4617c47925",
+  "position": {
+    "x": 18.833079654997462,
+    "y": 24.028411973617455,
+    "z": 1000,
+    "height": 293.53627600202941,
+    "width": 538.36631151699646
+  },
+  "visual": {
+    "visualType": "pivotTable",
+    "query": {
+      "queryState": {
+        "Columns": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Pivotted"
+                    }
+                  },
+                  "Property": "Day"
+                }
+              },
+              "queryRef": "Pivotted.Day",
+              "nativeQueryRef": "Day",
+              "active": true
+            }
+          ]
+        },
+        "Rows": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Pivotted"
+                    }
+                  },
+                  "Property": "Week Start - Sort"
+                }
+              },
+              "queryRef": "Pivotted.Week Start - Sort",
+              "nativeQueryRef": "Week Start - Sort",
+              "active": true
+            },
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Pivotted"
+                        }
+                      },
+                      "Hierarchy": "Activity Hierarchy"
+                    }
+                  },
+                  "Level": "Parent Activity"
+                }
+              },
+              "queryRef": "Pivotted.Activity Hierarchy.Parent Activity",
+              "nativeQueryRef": "Parent Activity",
+              "active": false
+            },
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Pivotted"
+                        }
+                      },
+                      "Hierarchy": "Activity Hierarchy"
+                    }
+                  },
+                  "Level": "Child 1 Activity"
+                }
+              },
+              "queryRef": "Pivotted.Activity Hierarchy.Child 1 Activity",
+              "nativeQueryRef": "Child 1 Activity",
+              "active": false
+            },
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Pivotted"
+                        }
+                      },
+                      "Hierarchy": "Activity Hierarchy"
+                    }
+                  },
+                  "Level": "Child 2 Activity"
+                }
+              },
+              "queryRef": "Pivotted.Activity Hierarchy.Child 2 Activity",
+              "nativeQueryRef": "Child 2 Activity",
+              "active": false
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Measures Table"
+                    }
+                  },
+                  "Property": "TimeSpent"
+                }
+              },
+              "queryRef": "Measures Table.TimeSpent",
+              "nativeQueryRef": "TimeSpent1"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Pivotted"
+                  }
+                },
+                "Property": "Week Start - Sort"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "expansionStates": [
+      {
+        "roles": [
+          "Rows"
+        ],
+        "levels": [
+          {
+            "queryRefs": [
+              "Pivotted.Week Start - Sort"
+            ],
+            "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Pivotted"
+                    }
+                  },
+                  "Property": "Week Start - Sort"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "Pivotted.Activity Hierarchy.Parent Activity"
+            ],
+            "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Pivotted"
+                    }
+                  },
+                  "Property": "Parent Activity"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "Pivotted.Activity Hierarchy.Child 1 Activity"
+            ],
+            "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Pivotted"
+                    }
+                  },
+                  "Property": "Child 1 Activity"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "Pivotted.Activity Hierarchy.Child 2 Activity"
+            ],
+            "isCollapsed": true,
+            "isPinned": true
+          }
+        ],
+        "root": {
+          "children": [
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'20250303'"
+                  }
+                }
+              ],
+              "children": [
+                {
+                  "identityValues": [
+                    {
+                      "Literal": {
+                        "Value": "'adhoc'"
+                      }
+                    }
+                  ],
+                  "children": [
+                    {
+                      "identityValues": [
+                        {
+                          "Literal": {
+                            "Value": "'65357'"
+                          }
+                        }
+                      ],
+                      "isToggled": true
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "objects": {
+      "subTotals": [
+        {
+          "properties": {
+            "rowSubtotals": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "columnSubtotals": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "grid": [
+        {
+          "properties": {
+            "outlineColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 3,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "145.57935432572768D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Pivotted.Week Start - Sort"
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            }
+          }
+        },
+        {
+          "properties": {},
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "Measures Table.TimeSpent"
+          }
+        },
+        {
+          "properties": {
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Conditional": {
+                      "Cases": [
+                        {
+                          "Condition": {
+                            "Comparison": {
+                              "ComparisonKind": 1,
+                              "Left": {
+                                "Measure": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Entity": "Measures Table"
+                                    }
+                                  },
+                                  "Property": "TimeSpent"
+                                }
+                              },
+                              "Right": {
+                                "Literal": {
+                                  "Value": "33.75D"
+                                }
+                              }
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#F7942A'"
+                            }
+                          }
+                        },
+                        {
+                          "Condition": {
+                            "Comparison": {
+                              "ComparisonKind": 0,
+                              "Left": {
+                                "Measure": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Entity": "Measures Table"
+                                    }
+                                  },
+                                  "Property": "TimeSpent"
+                                }
+                              },
+                              "Right": {
+                                "Literal": {
+                                  "Value": "33.75D"
+                                }
+                              }
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#7CC146'"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 2
+                }
+              }
+            ],
+            "metadata": "Measures Table.TimeSpent"
+          }
+        }
+      ],
+      "rowHeaders": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "9D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Time spent on:'"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'center'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "parentGroupName": "275a8176a152fbd33fb5",
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "f9cb1b064799a369540d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Pivotted"
+              }
+            },
+            "Property": "Day"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "80bff1553354530893f8",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Pivotted"
+              }
+            },
+            "Property": "Week Start - Sort"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "1ad8f99382fb0f835e3f",
+        "field": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Pivotted"
+                  }
+                },
+                "Hierarchy": "Activity Hierarchy"
+              }
+            },
+            "Level": "Parent Activity"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "5e178e049447bdaae66d",
+        "field": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Pivotted"
+                  }
+                },
+                "Hierarchy": "Activity Hierarchy"
+              }
+            },
+            "Level": "Child 1 Activity"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "b7eb38f4e2eed024e00a",
+        "field": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Pivotted"
+                  }
+                },
+                "Hierarchy": "Activity Hierarchy"
+              }
+            },
+            "Level": "Child 2 Activity"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "4180963e30eb7f80b228",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Measures Table"
+              }
+            },
+            "Property": "TimeSpent"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

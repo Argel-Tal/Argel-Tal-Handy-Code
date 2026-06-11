@@ -3,7 +3,7 @@
   "version": "4.0",
   "datasetReference": {
     "byPath": {
-      "path": "../Timesheet visualiser.SemanticModel"
+      "path": "../002-CapacityCosting.SemanticModel"
     }
   }
 }
